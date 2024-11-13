@@ -1,0 +1,60 @@
+.home-container main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100svw;
+}
+.home-title-container{
+    display: flex;
+    justify-content: center;
+}
+.home-title{
+    position: relative;
+    display: flex;
+    letter-spacing: 5px;
+    flex: 0.4;
+    white-space: nowrap;
+    font-size: 6.9svw;
+    flex-basis: 500px;
+    margin-bottom: 50px;
+}
+
+.loader{
+    flex: 0.1;
+    flex-basis: 200px;
+}
+.home-subtitle{
+    font-size: 0.2em;
+    position: absolute;
+    display: flex;
+    
+    bottom: 3%;
+}
+.scroll{
+    right: 45%;
+    position: absolute;
+    bottom: -12svw;
+}
+/* !TEXT WITH ANIMATION */
+.text-shine{
+    color: #FFF;
+    background: linear-gradient(to right, #4d4d4d 0, white 15%, #4d4d4d 25%);
+    background-position: 0;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 4s infinite linear;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+@keyframes shine {
+    0%{
+        background-position: 0;
+    }
+    100%{
+        background-position: 66.5svw;
+    }
+}
+/* !END OF TEXT WITH ANIMATION */

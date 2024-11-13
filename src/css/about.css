@@ -1,0 +1,123 @@
+.about-container{
+    display: flex;
+    height: 80vh;
+    width: 100svw;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.about1{
+    display: flex;
+    justify-content: center;
+    flex: 0.1;
+    flex-basis: 500px;
+}
+.main-hexagon{
+    position: relative;
+}
+.main-hexagon img{
+    height: 30svw;
+    clip-path: polygon(50% 0%, 97% 22%, 97% 77%, 50% 100%, 0 77%, 0 22%);
+}
+.tiny-hex{
+    position: absolute;
+    height: 9svw;
+    width: 8svw;
+    background-color: white;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+.tiny-hexagon1{
+    top: -6svw;
+    left: -6svw;
+    animation: rotate 9s infinite linear;
+}
+.tiny-hexagon2{
+    bottom: -7svw;
+    right: -8svw;
+    animation: rotate 12s infinite linear;
+}
+.tiny-hexagon3{
+    bottom:0svw;
+    right: 0.5svw;
+    height: 4.5svw;
+    width: 4svw;
+    animation: rotate 5s infinite linear;
+}
+.about2{
+    flex: 0.1;
+    flex-basis: 400px;
+    gap: 2svw;
+    text-align: start;
+}
+.tech-stack-details h1,
+.about-details h1{
+    margin-bottom: 2vh;
+    font-size: 1.6em;
+}
+.tech-stack-details{
+    margin-top: 20px;
+}
+.text{
+    width: 45svw;
+    font-size: 1.4svw;
+    letter-spacing: 0.22svw;
+}
+.tech-stack{
+    display: grid;
+    place-items: center;
+    gap: 1svw;
+}
+.stack{
+    z-index: 5;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 1.5px );
+    -webkit-backdrop-filter: blur( 1.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    overflow: hidden;
+}
+.stack img{
+    z-index: 5;
+    size: 100%;
+    height: 5ssvw;
+}
+.stack p{
+    size: 100%;
+    position: absolute;
+    opacity: 0;
+    top: 50%;  
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.stack img,
+.stack p {
+    transition: opacity 0.5s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.stack img:hover {
+    opacity: 0.4;
+    transform: translate(40%, 40%);
+}
+
+.stack p.hover-effect {
+    opacity: 1;
+}
+
+.stack img:hover + p {
+    opacity: 1;
+}
+
+@keyframes rotate{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}

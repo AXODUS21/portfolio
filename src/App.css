@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');    
+*{
+    font-family: "Montserrat", system-ui;   
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+::-webkit-scrollbar{
+    display: none;
+}
+body{
+  background-color: #000000;
+}
+.page-scroll-progress{
+    position: fixed;
+    background-color: #EEEEEE;
+    width: 100svw;
+    height: 5px;
+    transition: all 0.5s ease-in-out;
+}
+.pages-container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100svh;
+}
+.project-body{
+  height: 100svh;
+  background: #000000;
+  --gap: 5em;
+  --line: 1px;
+  --color: rgba(255, 255, 255, 0.2);
+
+  background-image: linear-gradient(
+      -90deg,
+      transparent calc(var(--gap) - var(--line)),
+      var(--color) calc(var(--gap) - var(--line) + 1px),
+      var(--color) var(--gap)
+    ),
+    linear-gradient(
+      0deg,
+      transparent calc(var(--gap) - var(--line)),
+      var(--color) calc(var(--gap) - var(--line) + 1px),
+      var(--color) var(--gap)
+    );
+  background-size: var(--gap) var(--gap);
+}
+.page{
+    color: white;
+    position: absolute;
+    transition: all 0.5s ease-in-out;
+    opacity: 0;
+}
+.navigation{
+  display: flex;
+  position: fixed;
+  z-index: 2;
+}
+
+/* from 0 with to 10svw also same with height*/
+
+.nav-bar{
+  color: black;
+  background-color: white;
+  margin-top: 1.3vh;
+  display: grid;
+  font-size: 1em;
+  gap: 0.1svw; 
+  cursor: pointer;
+  opacity: 0;
+}
+
+.navigation .tract{
+   animation: tract 0.6s forwards ease-in-out;
+}
+.navigation .retract{
+   animation: retract 1s forwards ease-in-out;
+}
+.to{
+  transition: all 0.5s ease-in-out;
+}
+.to:hover{
+  transform: translateX(10%);
+}
+
+@keyframes tract {
+  0%{
+    font-size: 0px;
+    opacity: 1;
+    width: 0svw;
+    padding: 0svw;
+    height: 0vh;
+  }
+  50%{
+    width: 13em;
+    padding: 0svw;
+    height: 2vh;
+  }
+  100%{
+    opacity: 1;
+    width: 13em;
+    padding: 0.7svw 0svw 0.7svw 10px;
+    height: 20vh;
+  }
+}
+
+@keyframes retract{
+  0%{
+    font-size: 0px;
+    opacity: 1;
+    width: 13rem;
+    padding: 0.7svw 0svw 0.7svw 10px;
+    height: 20vh;
+  }
+  40%{
+    width: 13rem;
+    padding: 0.7svw;
+    height: 2vh;
+  }
+  50%{
+    width: 13rem;
+    padding: 0.7svw;
+    height: 2vh;
+  }
+  99%{
+    width: 0svw;
+    padding: 0.7svw;
+    height: 2vh;
+  }
+  100%{
+    width: 0svw;
+    padding: 0svw;
+    height: 0vh;
+    opacity: 0;
+    font-size: 0px;
+  }
+}

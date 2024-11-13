@@ -1,0 +1,144 @@
+.projects-container{
+    width: 100svw;
+    padding: 25px 15px 0px 15px;
+}
+.projects-container h1{
+    margin-bottom: 12px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 5%;
+    color: rgb(255, 255, 255);
+    font-size: 20vw;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+}
+.spinning-img-container{
+    display: grid;
+    overflow: hidden;
+    gap: 20px;
+}
+.spinning-img2{
+    height: 14svw;
+    animation: spin-down-up 10s linear infinite;
+}
+.spinning-img{
+    height: 14svw;
+    animation: spin-up-down 10s linear infinite;
+}
+.project-box2,
+.project-box1{
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    height: 350px;
+    flex-wrap: wrap;
+}
+.top,
+.bottom{
+    flex: 1;
+    flex-basis: 500px;
+}
+.project-box1 .bottom{
+    gap: 20px;
+    width: 50svw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.project-box2 .top div,
+.project-box1 .bottom div{
+    height: fit-content;
+}
+
+.project1{
+    grid-template-columns: 1.5fr 2fr;
+}
+.project6{
+    grid-template-columns: 2fr 1.5fr;
+}
+.project-box2 .top{
+    gap: 20px;
+    width: 50svw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.project-img{
+    display: flex;
+    justify-content: center;
+}
+.project-img img{
+    height: 10svw;
+}
+.project{
+    display: grid;
+    background: rgba(31, 31, 31, 0.943);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.651);
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    padding: 10px;
+    
+}
+.project6{
+    display: grid;
+    height: 22.4svw;
+}
+.project1{
+    display: grid;
+    height: 21.4svw;
+}
+.project-description{
+    font-size: 0.7em;
+    padding: 1svw;
+}
+.project-p p{
+    display: -webkit-box;
+    -webkit-line-clamp: 11;
+    line-clamp: 7;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.project-description p {
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.extra-details-btn{
+    height: 20px;
+    display: flex;
+    justify-content: end;
+}
+.project-p{
+    z-index: 1;
+    font-size: 1em;
+}
+
+.popup{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background: white;
+    padding: 10px;
+    border: black 5px solid;
+    border-radius: 20px;
+    transition: all 1s ease-in-out;
+}
+@keyframes spin-up-down {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-330%);
+  }
+}
+
+@keyframes spin-down-up{
+  0% {
+    transform: translateY(-330%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

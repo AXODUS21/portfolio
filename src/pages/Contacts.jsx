@@ -1,7 +1,7 @@
 import React from "react";
 import emailjs from "emailjs-com";
 import Socials from "../components/Socials";
-import "../css/Contacts.css";
+import "../css/contacts.css";
 
 const Contacts = () => {
   const handleSubmit = (e) => {

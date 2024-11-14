@@ -95,7 +95,7 @@ const ProjectRadio = ({title, setProjectToOpen, height, stack, details, style ,i
               </div>
             </div>
           ) : (
-            <span className="text text-xl">{title}</span>
+            <span className="text text-lg">{title}</span>
           )}
         </span>
       </button>

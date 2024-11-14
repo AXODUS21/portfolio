@@ -72,10 +72,10 @@ body{
 }
 
 .navigation .tract{
-   animation: tract 0.6s forwards ease-in-out;
+   animation: tract 0.5s forwards ease-in-out;
 }
 .navigation .retract{
-   animation: retract 1s forwards ease-in-out;
+   animation: retract 0.6s forwards ease-in-out;
 }
 .to{
   transition: all 0.5s ease-in-out;
@@ -100,7 +100,7 @@ body{
   100%{
     opacity: 1;
     width: 13em;
-    padding: 0.7svw 0svw 0.7svw 10px;
+    padding: 1.2svw 0svw 0.7svw 10px;
     height: 20vh;
   }
 }
@@ -110,7 +110,7 @@ body{
     font-size: 0px;
     opacity: 1;
     width: 13rem;
-    padding: 0.7svw 0svw 0.7svw 10px;
+    padding: 1.2svw 0svw 0.7svw 10px;
     height: 20vh;
   }
   40%{

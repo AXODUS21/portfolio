@@ -8,6 +8,7 @@
 .home-title-container{
     display: flex;
     justify-content: center;
+    padding-left: 10px;
 }
 .home-title{
     position: relative;

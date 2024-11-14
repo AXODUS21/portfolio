@@ -38,7 +38,7 @@ const Contacts = () => {
         <div className="flex items-center socials">
           <Socials />
         </div>
-        <div className="mx-1 sm:mx-10">
+        <div className="mx-10">
           <form onSubmit={handleSubmit} className="grid gap-10">
             <input
               className="rounded-md py-2 px-3 sm:w-auto w-40"

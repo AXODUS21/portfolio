@@ -39,7 +39,7 @@ const Contacts = () => {
           <Socials />
         </div>
         <div>
-          <form onSubmit={handleSubmit} className="grid gap-10">
+          <form onSubmit={handleSubmit} className="grid gap-10 pr-6">
             <input
               className="rounded-md py-2 px-3 sm:w-auto w-40"
               type="email"

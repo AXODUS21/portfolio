@@ -100,7 +100,7 @@ body{
   100%{
     opacity: 1;
     width: 13em;
-    padding: 1.2svw 0svw 0.7svw 10px;
+    padding: 10px 0svw 0.7svw 10px;
     height: 20vh;
   }
 }
@@ -110,7 +110,7 @@ body{
     font-size: 0px;
     opacity: 1;
     width: 13rem;
-    padding: 1.2svw 0svw 0.7svw 10px;
+    padding: 10px 0svw 0.7svw 10px;
     height: 20vh;
   }
   40%{

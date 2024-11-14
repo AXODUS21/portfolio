@@ -34,11 +34,11 @@ const Contacts = () => {
       <h1 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 font-bold text-[13svw] z-[-99]">
         CONTACTS
       </h1>
-      <div className="flex justify-center sm:gap-10 gap-1 px-10 py-14 form-bg">
+      <div className="flex justify-center sm:gap-10 gap-0.5 px-10 py-14 form-bg">
         <div className="flex items-center socials">
           <Socials />
         </div>
-        <div className="mr-10">
+        <div className="mx-1 sm:mx-10">
           <form onSubmit={handleSubmit} className="grid gap-10">
             <input
               className="rounded-md py-2 px-3 input"

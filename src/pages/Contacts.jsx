@@ -41,14 +41,14 @@ const Contacts = () => {
         <div>
           <form onSubmit={handleSubmit} className="grid gap-10 pr-6">
             <input
-              className="rounded-md py-2 px-3 sm:w-auto w-40"
+              className="rounded-md py-2 px-3 sm:w-auto w-40 input"
               type="email"
               name="email" // Add 'name' attribute for emailjs to recognize
               placeholder="Email..."
               required
             />
             <textarea
-              className="rounded-md py-2 px-3 sm:w-auto w-40"
+              className="rounded-md py-2 px-3 sm:w-auto w-40 input"
               name="message" // Add 'name' attribute for emailjs to recognize
               placeholder="Your Message..."
               minLength={30}

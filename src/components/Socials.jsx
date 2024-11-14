@@ -113,7 +113,7 @@ const StyledWrapper = styled.div`
 
   .letter {
     opacity: 0;
-    color:black;
+    color: black;
   }
 
   .card {
@@ -125,7 +125,7 @@ const StyledWrapper = styled.div`
     border-top-left-radius: 10px;
     background: lightgrey;
     transition: 0.4s ease-in-out, 0.2s background-color ease-in-out,
-    0.2s background-image ease-in-out;
+      0.2s background-image ease-in-out;
     background: rgba(255, 255, 255, 0.596);
     backdrop-filter: blur(5px);
     border: 1px solid transparent;
@@ -156,7 +156,7 @@ const StyledWrapper = styled.div`
   .card:nth-child(3) .dribble {
     opacity: 0;
     transition: 0.2s ease-in-out;
-    fill: #ffb5d2;
+    fill: #03a9f4;
   }
 
   .card:nth-child(4) {

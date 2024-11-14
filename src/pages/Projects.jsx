@@ -81,8 +81,8 @@ const Projects = () => {
           <div className="project1 project mb-7">
             <div className="project-p grid pl-7 pr-5">
               <p>{PROJECT_1_TEXT}</p>
-              <div
-                className="flex justify-start"
+              <div 
+                className="flex justify-start mt-10"
                 onClick={() =>
                   handlePopUp(
                     gseas,

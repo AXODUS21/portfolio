@@ -93,8 +93,8 @@
 }
 .project-p p{
     display: -webkit-box;
-    -webkit-line-clamp: 11;
-    line-clamp: 7;
+    -webkit-line-clamp: 9;
+    line-clamp: 9;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }

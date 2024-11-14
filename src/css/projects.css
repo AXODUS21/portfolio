@@ -114,6 +114,14 @@
     z-index: 1;
     font-size: 1em;
 }
+.project1,
+.project2,
+.project3,
+.project4,
+.project5,
+.project6 {
+    overflow: hidden;
+}
 
 .popup{
     position: fixed;

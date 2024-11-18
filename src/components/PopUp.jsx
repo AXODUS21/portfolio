@@ -27,7 +27,7 @@ const PopUp = ({popUp, details, setPopUp}) => {
             {details.title}
           </p>
           <div className="p-10 flex w-full gap-40">
-            <p className={`text-${details.TextStyle} font-bold text-[1.2svw]`}>
+            <p className={`text-${details.TextStyle} font-bold text-[1svw]`}>
               {details.description}
             </p>
             <div className="hidden sm:grid gap-6 w-[25svw]">
@@ -98,7 +98,7 @@ const PopUp = ({popUp, details, setPopUp}) => {
             <p className="text-xl font-bold text-center mb-2">
               {details.title}
             </p>
-            <p className="text-black text-center mb-4 text-[15px]">{details.description}</p>
+            <p className="text-black text-center mb-4 text-[0.8rem]">{details.description}</p>
           </div>
           <div className="flex justify-between px-5 items-center">
             <div className="flex">

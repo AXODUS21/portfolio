@@ -164,7 +164,7 @@ function App() {
       ></div>
 
       <div
-        className="navigation z-[9999] " 
+        className="navigation z-[100] " 
         onClick={() => {
           setIsNavOpen((prev) => !prev);
         }}
@@ -200,7 +200,7 @@ function App() {
         </div>
         <div
           className={`page projects ${
-            currentPage.projects === 1 ? "z-[999]" : "z-[1]"
+            currentPage.projects === 1 ? "z-[99]" : "z-[1]"
           }`}
           style={{ opacity: currentPage.projects }}
         >

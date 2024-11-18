@@ -133,6 +133,7 @@
     border-radius: 20px;
     transition: all 1s ease-in-out;
 }
+
 @keyframes spin-up-down {
   0% {
     transform: translateY(0);

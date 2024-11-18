@@ -46,9 +46,13 @@ const Projects = () => {
       setTimeout(() => {
         setpopUp(true);
         setDetails({
-          image1: image,
+          image: image,
           title: title,
           description: description,
+          techStacks: stack,
+          TextStyle: style,
+          link,
+          hubLink: hublink,
         });
       }, 1000);
     }

@@ -10,7 +10,7 @@ const PopUp = ({popUp, details, setPopUp}) => {
     <div className="relative">
       {/* DESKTOP POP UP */}
       <div
-        className="hidden sm:block popup w-4/5 h-5/6 p-0"
+        className="hidden md:block popup w-4/5 h-5/6 p-0"
         style={{
           transform: `translate(${popUp ? "-50%, -30%" : "-50%,100%"})`,
           zIndex: `${popUp ? "9999" : "0"}`,
@@ -20,17 +20,17 @@ const PopUp = ({popUp, details, setPopUp}) => {
           <img className="h-full rounded-xl" src={details.image} />
         </div>
 
-        <div className="pop-up-content p-8">
+        <div className="p-8">
           <p
             className={`text-${details.TextStyle} flex justify-center font-bold text-4xl`}
           >
             {details.title}
           </p>
-          <div className="popup-content p-10 flex w-full gap-40">
-            <p className={`text-${details.TextStyle} font-bold`}>
+          <div className="p-10 flex w-full gap-40">
+            <p className={`text-${details.TextStyle} font-bold text-[1.2svw]`}>
               {details.description}
             </p>
-            <div className="hidden sm:grid gap-6 w-[20%]">
+            <div className="hidden sm:grid gap-6 w-[25svw]">
               {details.techStacks.map((techStack) => {
                 let toDisplay = "";
                 for (let i = 0; i < Stack.length; i++) {
@@ -77,7 +77,7 @@ const PopUp = ({popUp, details, setPopUp}) => {
 
       {/* MOBILE POP UP */}
       <div
-        className="popup block sm:hidden absolute w-[85svw] h-[85svh] pl-[1svh]"
+        className="popup block md:hidden absolute w-[85svw] h-[85svh] pl-[1svh]"
         style={{
           zIndex: `${popUp ? "9999" : "0"}`,
           transform: `translate(${popUp ? "-50%, 2%" : "-180%, 2%"})`,

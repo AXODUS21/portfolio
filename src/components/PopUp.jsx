@@ -95,10 +95,10 @@ const PopUp = ({popUp, details, setPopUp}) => {
             <img className="rounded-md mb-3" src={details.image} />
           </div>
           <div className="text-black">
-            <p className="text-xl font-bold text-center mb-3">
+            <p className="text-xl font-bold text-center mb-2">
               {details.title}
             </p>
-            <p className="text-black text-center mb-4">{details.description}</p>
+            <p className="text-black text-center mb-4 text-[15px]">{details.description}</p>
           </div>
           <div className="flex justify-between px-5 items-center">
             <div className="flex">

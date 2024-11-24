@@ -7,14 +7,14 @@ const Testimonials = () => {
   return (
     <div className="sm:flex grid gap-16 px-10 justify-center sm:pt-10">
       <div className="sm:grid flex sm:gap-16 gap-5 sm:w-1/2 w-full">
-        <div className="sm:text-5xl text-2xl font-bold text-center">
+        <div className="sm:text-5xl text-xl font-bold text-center">
           CERTIFICATES & TESTIMONIALS
         </div>
         <div className="flex justify-center">
           <img className="sm:h-5/6" src={cert} />
         </div>
       </div>
-      <div className="testimonials-right sm:w-1/2 sm:gap-0 gap-4 sm:grid flex ">
+      <div className=" sm:w-1/2 sm:gap-0 gap-9 grid sm:px-0 px-5">
         <div className="text-center sm:text-lg text-xs ">
           "He worked hard to accomplish the task at hand very easy to
           communicate with and he even accommodated when I keep asking for

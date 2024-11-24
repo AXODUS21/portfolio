@@ -3,6 +3,7 @@
     height: 80vh;
     width: 100svw;
     align-items: center;
+    gap: 70px;
     justify-content: space-evenly;
     flex-wrap: wrap;
 }

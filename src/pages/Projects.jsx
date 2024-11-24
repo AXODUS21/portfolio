@@ -79,14 +79,21 @@ const Projects = () => {
       </div>
 
       {/*PC VIEW*/}
-
       <div className="project-box1 xl:flex hidden">
         <div className="top">
-          <div className="project1 project mb-7">
-            <div className="project-p grid pl-7 pr-5">
-              <p>{PROJECT_1_TEXT}</p>
-              <div 
-                className="flex justify-start mt-10"
+          <div className="project1 project mb-12">
+            <div className="grid pl-2 pr-2">
+              <div className="">
+                <h2 className="font-bold">GSEAS</h2>
+                <a
+                  className="underline atag"
+                  href="https://github.com/AXODUS21/GSEAS"
+                >
+                  https://github.com/AXODUS21/GSEAS
+                </a>
+              </div>
+              <div
+                className="flex justify-start"
                 onClick={() =>
                   handlePopUp(
                     gseas,
@@ -133,7 +140,7 @@ const Projects = () => {
               image={amazon}
               stack={["JS", "CSS", "HTML"]}
               style={"black"}
-              hubLink={"https://github.com/AXODUS21/amazon-copy"}
+              hubLink={"https://tinyurl.com/4nwsa6m4"}
               link={"https://axodus21.github.io/amazon-copy/amazon.html"}
               text={`This project is a clone of the Amazon website, developed with HTML, CSS, and JavaScript to replicate essential e-commerce functionalities. It uses JavaScript to render all items dynamically, allowing users to browse through a selection of products. The site features a shopping cart that tracks the quantity of items added, updating the total cost in real-time as users adjust their selections. Additionally, it provides an interactive user experience similar to Amazon's, enabling users to simulate product selection, cart management, and purchase calculations.`}
             />
@@ -180,8 +187,16 @@ const Projects = () => {
               <img className="spinning-img2" src={emerse2} alt="vain" />
               <img className="spinning-img2" src={emerse3} alt="vain" />
             </div>
-            <div className="project-p grid pr-7 pl-5">
-              <p>{PROJECT_6_TEXT}</p>
+            <div className="project-p grid pr-2 pl-2">
+              <div className="">
+                <h2 className="font-bold">EMERSE</h2>
+                <a
+                  className="underline atag"
+                  href="https://github.com/AXODUS21/Emerse"
+                >
+                  https://github.com/AXODUS21/Emerse
+                </a>
+              </div>
               <div
                 className="flex justify-end"
                 onClick={() =>

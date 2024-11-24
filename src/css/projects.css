@@ -1,7 +1,4 @@
-.projects-container{
-    width: 100svw;
-    padding: 25px 15px 0px 15px;
-}
+
 .projects-container h1{
     margin-bottom: 12px;
     position: absolute;
@@ -16,6 +13,7 @@
 }
 .spinning-img-container{
     display: grid;
+    width: 100%;
     overflow: hidden;
     gap: 20px;
 }
@@ -29,10 +27,9 @@
 }
 .project-box2,
 .project-box1{
-    display: flex;
+    padding: 0px 6svw;
     width: 100%;
     gap: 20px;
-    height: 350px;
     flex-wrap: wrap;
 }
 .top,
@@ -50,12 +47,11 @@
 .project-box1 .bottom div{
     height: fit-content;
 }
-
 .project1{
-    grid-template-columns: 1.5fr 2fr;
+    grid-template-columns: 1fr 2fr;
 }
 .project6{
-    grid-template-columns: 2fr 1.5fr;
+    grid-template-columns: 2fr 1fr;
 }
 .project-box2 .top{
     gap: 20px;
@@ -73,37 +69,22 @@
 .project{
     display: grid;
     background: rgba(31, 31, 31, 0.943);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.651);
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
     padding: 10px;
     
 }
-.project6{
-    display: grid;
-    height: 22.4svw;
-}
+.project6,
 .project1{
     display: grid;
-    height: 21.4svw;
+    height: 18.3svw;
 }
 .project-description{
     font-size: 0.7em;
     padding: 1svw;
 }
-.project-p p{
-    display: -webkit-box;
-    -webkit-line-clamp: 9;
-    line-clamp: 9;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-.project-description p {
-    display: -webkit-box;
-    -webkit-line-clamp: 5;
-    line-clamp: 5;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+.atag{
+    font-size: 10px;
 }
 .extra-details-btn{
     height: 20px;
@@ -112,7 +93,6 @@
 }
 .project-p{
     z-index: 1;
-    font-size: 1em;
 }
 .project1,
 .project2,
@@ -121,6 +101,7 @@
 .project5,
 .project6 {
     overflow: hidden;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.651);
 }
 
 .popup{

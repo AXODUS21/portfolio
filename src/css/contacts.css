@@ -13,7 +13,7 @@
     -webkit-backdrop-filter: blur( 0px );
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
-    transition: background  1s ease-in-out;
+    transition: background  0.3s ease-in-out;
     color: black;
 }
 .input:focus{
@@ -23,4 +23,21 @@
     -webkit-backdrop-filter: blur( 7px );
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+.loader2 {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: #3539ff;
+  animation: 1.5s pulse infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 #4310fe;
+  }
+
+  100% {
+    box-shadow: 0 0 0 14px #69ffa800;
+  }
 }

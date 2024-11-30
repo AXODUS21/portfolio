@@ -87,7 +87,7 @@ import '../css/projects.css'
     
   return (
     <div className="projects-container flex justify-center">
-      <div className="fixed z-[99999]">
+      <div className="fixed z-[99999] bg-white">
         <PopUp popUp={popUp} details={details} setPopUp={setpopUp} /> 
       </div>
       <div className="buttons absolute sm:bottom-[-20svh] bottom-[-270px] flex gap-10 cursor-pointer">

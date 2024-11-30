@@ -31,12 +31,12 @@ import "../css/projects.css";
                 make an account to save their purchases in a cart and all of
                 those data are saved in a database.`;
 
-const ProjectsMobile = ({handlePopUp, degrees}) => {
+const ProjectsMobile = ({handlePopUp, degrees, popUp}) => {
   
   return (
       <div
         className="box2"
-        style={{ transform: `perspective(5000px) rotateX(${degrees}deg)` }}
+        style={{ transform: `perspective(${popUp ? "50": "1200" }px) rotateX(${degrees}deg)` }}
       >
         <div className="center-text">PROJECTS</div>
         <div className="projM" style={{ "--i": 1 }}>

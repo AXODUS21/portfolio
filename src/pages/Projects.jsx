@@ -109,7 +109,7 @@ import '../css/projects.css'
 
       {/*MOBILE VIEW */}
       <div className="lg:hidden flex">
-        <ProjectsMobile handlePopUp={handlePopUp} degrees={degrees} />
+        <ProjectsMobile handlePopUp={handlePopUp} degrees={degrees} popUp={popUp} />
       </div>
 
       {/*PC VIEW*/}

@@ -121,6 +121,7 @@
     border: black 5px solid;
     border-radius: 20px;
     transition: all 1s ease-in-out;
+    z-index: 9999;
 }
 
 @keyframes spin-up-down {

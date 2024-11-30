@@ -75,10 +75,13 @@ const PopUp = ({popUp, details, setPopUp}) => {
 
       {/* MOBILE POP UP */}
       <div
-        className="popup block md:hidden fixed w-[85svw] h-[85svh] pl-[1svh]"
+        className="popup block md:hidden fixed w-[85svw] h-[85svh] pl-[1svh] "
         style={{
+          transformStyle: "preserve-3d",
           zIndex: `${popUp ? "9999" : "0"}`,
-          transform: `translate(${popUp ? "-50%, -50%" : "-180%, -50%"})`,
+          transform: `translate(${
+            popUp ? "-50%, -50%" : "-180%, -50%"
+          }) perspective(12000px)`,
         }}
       >
         <button
@@ -96,7 +99,9 @@ const PopUp = ({popUp, details, setPopUp}) => {
             <p className="text-xl font-bold text-center mb-2">
               {details.title}
             </p>
-            <p className="text-black text-center mb-4 text-[0.8rem]">{details.description}</p>
+            <p className="text-black text-center mb-4 text-[0.8rem]">
+              {details.description}
+            </p>
           </div>
           <div className="flex justify-between px-5 items-center">
             <div className="flex">
@@ -132,11 +137,7 @@ const PopUp = ({popUp, details, setPopUp}) => {
                   }
 
                   return (
-                    <img
-                      className="w-9 h-9"
-                      src={toDisplay}
-                      alt={Stack.name}
-                    />
+                    <img className="w-9 h-9" src={toDisplay} alt={Stack.name} />
                   );
                 })}
               </div>

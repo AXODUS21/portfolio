@@ -41,7 +41,7 @@
     width: 80svw;
     height: 20svh;
     transform-style: preserve-3d;
-    transform: perspective(1000px);
+    transform: perspective(200px);
     transition: all 1.5s;
 }
 .proj {

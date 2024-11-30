@@ -1,50 +1,62 @@
 import React,{useState} from 'react'
-import vain from "../photos/projects/vain (1).png";
+import arrow from "../photos/next.png"
+import ProjectsMobile from '../components/projectsMobile';
+import ProjectComponent from '../components/ProjectComponent';
+import PopUp from '../components/PopUp';
 import gseas from "../photos/projects/gseas (1).png";
 import gseas2 from "../photos/projects/gseas (2).png";
 import gseas3 from "../photos/projects/gseas (3).png";
 import emerse1 from "../photos/projects/Emerse (1).png";
 import emerse2 from "../photos/projects/Emerse (2).png";
 import emerse3 from "../photos/projects/Emerse (3).png";
+import vain from "../photos/projects/vain (1).png";
+import vain2 from "../photos/projects/vain (2).png";
+import vain3 from "../photos/projects/vain (3).png";
 import amazon from "../photos/projects/amazon.png";
+import amazon2 from "../photos/projects/amazon.png";
+import amazon3 from "../photos/projects/amazon.png";
 import ileap from "../photos/projects/ileap.png";
+import ileap2 from "../photos/projects/ileap (1).png";
+import ileap3 from "../photos/projects/ileap (2).png";
 import xelldealership from "../photos/projects/xelldealership.png";
+import xelldealership2 from "../photos/projects/xelldealership (1).png";
+import xelldealership3 from "../photos/projects/xelldealership (2).png";
 import '../css/projects.css'
-import ProjectComponent from '../components/ProjectComponent';
-import ProjectsMobile from '../components/projectsMobile';
-import PopUp from '../components/PopUp';
-import ViewMore from '../components/ViewMore';
- 
 
-const Projects = () => {
-  const [popUp, setpopUp] = useState(false)
-  const [details, setDetails] = useState({
-    image: '',
-    title: '',
-    techStacks: [],
-    TextStyle:'',
-    hubLink: '',
-    link: '',
-    description: '', 
-  })
 
-  const handlePopUp = (image, title,stack,style, description, link, hublink) => {
-    setpopUp(false);
-    console.log("clicked")
-    if (!popUp) {
-      setDetails({
-        image: image,
-        title: title,
-        description: description,
-        techStacks: stack,
-        TextStyle: style,
-        link,
-        hubLink: hublink,
-      });
-      setpopUp(true);
-    } else {
-      setTimeout(() => {
-        setpopUp(true);
+
+
+
+
+
+  const PROJECT_1_TEXT = `GSEAS (Sea of Group Chats) is a dynamic platform designed for creating and managing group chats effortlessly. With GSEAS, users can set up unlimited group chats, engage in real-time conversations, and personalize each chat’s details—including the chat image, member list, and group name. The platform offers a seamless experience for social and collaborative interactions, making it easy to stay connected with multiple groups.`;
+  const PROJECT_2_TEXT = `A MERN stack project. this website is a e-ccomerce type of
+                website fully responsive and even has PAYPAL payment
+                integration. It has an authentication function where users can
+                make an account to save their purchases in a cart and all of
+                those data are saved in a database.`;
+  const PROJECT_3_TEXT = `Xelldealership is a cutting-edge e-commerce platform designed for small businesses. Xelldealership offers a seamless and efficient way to manage inventory, track sales, and generate revenue. The platform has a user-friendly interface, allowing small businesses to create products, manage inventory, and track sales. Xelldealership also includes a payment gateway, allowing businesses to accept payments from customers.`;
+  const PROJECT_4_TEXT = `Vain is a cutting-edge virtual reality platform designed for educational institutions. Vain offers a seamless and immersive learning experience for students, allowing them to engage with real-world scenarios, interact with virtual objects, and learn new skills. The platform has a user-friendly interface, allowing educators to create courses, manage students, and track progress. Vain also includes a gamification feature, allowing students`;
+  const PROJECT_5_TEXT = `Amazon is a global e-commerce platform that offers a wide range of products, services, and experiences. Amazon has a user-friendly interface, allowing customers to browse and buy products, manage their shopping cart, and pay for their purchases. The platform also includes a payment gateway, allowing customers to accept payments from their credit or debit cards.`;
+  const PROJECT_6_TEXT = `ILEAP (Intelligent Learning Application Platform) is a cutting-edge learning management system designed for educational institutions. ILEAP offers a comprehensive solution for managing and delivering educational content, providing instant feedback, and ensuring that students receive the best possible learning experience. The platform has a user-friendly interface, allowing educators to create courses, manage students, and track progress. ILEAP also includes a gamification feature, allowing students`;
+
+  const Projects = () => {
+    const [degrees, setDegrees] = useState(0);
+    const [popUp, setpopUp] = useState(false)
+    const [details, setDetails] = useState({
+      image: '',
+      title: '',
+      techStacks: [],
+      TextStyle:'',
+      hubLink: '',
+      link: '',
+      description: '', 
+    })
+                  
+    const handlePopUp = (image, title,stack,style, description, link, hublink) => {
+      setpopUp(false);
+      console.log("clicked")
+      if (!popUp) {
         setDetails({
           image: image,
           title: title,
@@ -54,166 +66,164 @@ const Projects = () => {
           link,
           hubLink: hublink,
         });
-      }, 1000);
-    }
-  };
+        setpopUp(true);
+      } else {
+        setTimeout(() => {
+          setpopUp(true);
+          setDetails({
+            image: image,
+            title: title,
+            description: description,
+            techStacks: stack,
+            TextStyle: style,
+            link,
+            hubLink: hublink,
+          });
+        }, 1000);
+      }
+    };
 
-  const PROJECT_1_TEXT = `GSEAS (Sea of Group Chats) is a dynamic platform designed for creating and managing group chats effortlessly. With GSEAS, users can set up unlimited group chats, engage in real-time conversations, and personalize each chat’s details—including the chat image, member list, and group name. The platform offers a seamless experience for social and collaborative interactions, making it easy to stay connected with multiple groups.`;
-
-  const PROJECT_6_TEXT = `A MERN stack project. this website is a e-ccomerce type of
-                website fully responsive and even has PAYPAL payment
-                integration. It has an authentication function where users can
-                make an account to save their purchases in a cart and all of
-                those data are saved in a database.`;
-
+  const nextSlide = () => {
+    setDegrees((prev) => prev -= 60);
+  }
+  
+  const prevSlide = () => {
+    setDegrees((prev) => (prev += 60));
+  }
     
   return (
-    <div className="projects-container">
-      <h1 className="font-bold text-2xl">Projects</h1>
+    <div className="projects-container flex justify-center">
+      <div className="buttons absolute sm:bottom-[-20svh] bottom-[-270px] flex gap-10 z-[99] cursor-pointer">
+        <div onClick={nextSlide} className="next text-2xl text-white">
+          <img
+            src={arrow}
+            alt="arrow"
+            className="bg-white rounded-full sm:rotate-180 active:scale-90 rotate-90"
+          />
+        </div>
+        <div
+          onClick={prevSlide}
+          className="prev text-2xl text-white active:scale-90 sm:rotate-0 rotate-[270deg]"
+        >
+          <img src={arrow} alt="arrow" className="bg-white rounded-full" />
+        </div>
+      </div>
       <PopUp popUp={popUp} details={details} setPopUp={setpopUp} />
 
       {/*MOBILE VIEW */}
 
-      <div className="xl:hidden flex">
-        <ProjectsMobile handlePopUp={handlePopUp} />
+      <div className="lg:hidden flex">
+        <ProjectsMobile handlePopUp={handlePopUp} degrees={degrees} />
       </div>
 
       {/*PC VIEW*/}
-      <div className="project-box1 xl:flex hidden">
-        <div className="top">
-          <div className="project1 project mb-12">
-            <div className="grid pl-2 pr-2">
-              <div className="">
-                <h2 className="font-bold">GSEAS</h2>
-                <a
-                  className="underline atag"
-                  href="https://github.com/AXODUS21/GSEAS"
-                >
-                  https://github.com/AXODUS21/GSEAS
-                </a>
-              </div>
-              <div
-                className="flex justify-start"
-                onClick={() =>
-                  handlePopUp(
-                    gseas,
-                    "VAIN",
-                    ["NextJS", "MongoDB", "CSS", "Tailwind"],
-                    "white",
-                    PROJECT_1_TEXT,
-                    "https://gseas.vercel.app/",
-                    "https://github.com/AXODUS21/GSEAS"
-                  )
-                }
-              >
-                <ViewMore />
-              </div>
-            </div>
-            <div className="spinning-img-container">
-              <img className="spinning-img" src={gseas} alt="vain" />
-              <img className="spinning-img" src={gseas2} alt="vain" />
-              <img className="spinning-img" src={gseas3} alt="vain" />
-              <img className="spinning-img" src={gseas} alt="vain" />
-              <img className="spinning-img" src={gseas2} alt="vain" />
-              <img className="spinning-img" src={gseas3} alt="vain" />
-            </div>
-          </div>
-        </div>
-
-        <div className="bottom">
-          <div className="project2">
+      <div className="lg:flex hidden">
+        <div
+          className="box"
+          style={{ transform: `perspective(1900px) rotateY(${degrees}deg)` }}
+        >
+          <div className="center-text">PROJECTS</div>
+          <div className="proj" style={{ "--i": 1 }}>
             <ProjectComponent
+              image={gseas}
+              image2={gseas2}
+              image3={gseas3}
+              title={"GSEAS"}
+              stack={["NextJS", "MongoDB", "CSS", "Tailwind"]}
+              textS={"white"}
+              stext={
+                "A Live Chat Web App Made with NextJS and MongoDB. Uses Socket.io And Render For The Live Functionality"
+              }
+              text={PROJECT_1_TEXT}
+              link={"https://gseas.vercel.app/"}
+              hubLink={"https://github.com/AXODUS21/GSEAS"}
               handlePopUp={handlePopUp}
-              title={"ILEAP"}
-              image={ileap}
-              stack={["Firebase", "React", "CSS", "JS"]}
-              style={"white"}
-              link="https://ileap-a49b9.web.app/"
-              hubLink="https://github.com/AXODUS21/ILEAP"
-              text={`ILEAP is a platform designed to help students and graduates find jobs and internships. It offers features like student profiles, job search, and application progress tracking, making it easier for users to connect with employers. The platform also includes analytics and reporting tools for administrators, providing insights into user engagement and success rates. With these resources, ILEAP supports students in building their careers effectively. It’s an all-in-one solution for job seekers and administrators alike.`}
             />
           </div>
-          <div className="project3">
+          <div className="proj" style={{ "--i": 2 }}>
             <ProjectComponent
+              image={emerse1}
+              image2={emerse2}
+              image3={emerse3}
+              title={"EMERSE"}
+              stack={["React", "CSS", "MongoDB", "Vite"]}
+              textS={"black"}
+              text={PROJECT_2_TEXT}
+              stext={
+                "An Ecommerce Website Made with React and MongoDB. With An Implementation Of The Paypal API For Payment Integration."
+              }
+              link={"https://emerse.netlify.app/"}
+              hubLink={"https://github.com/AXODUS21/Emerse"}
               handlePopUp={handlePopUp}
-              title="Amazon Copy"
-              image={amazon}
-              stack={["JS", "CSS", "HTML"]}
-              style={"black"}
-              hubLink={"https://tinyurl.com/4nwsa6m4"}
-              link={"https://axodus21.github.io/amazon-copy/amazon.html"}
-              text={`This project is a clone of the Amazon website, developed with HTML, CSS, and JavaScript to replicate essential e-commerce functionalities. It uses JavaScript to render all items dynamically, allowing users to browse through a selection of products. The site features a shopping cart that tracks the quantity of items added, updating the total cost in real-time as users adjust their selections. Additionally, it provides an interactive user experience similar to Amazon's, enabling users to simulate product selection, cart management, and purchase calculations.`}
             />
           </div>
-        </div>
-      </div>
-
-      <div className="project-box2 xl:flex hidden">
-        <div className="top">
-          <div className="project4">
+          <div className="proj" style={{ "--i": 3 }}>
             <ProjectComponent
-              handlePopUp={handlePopUp}
-              title="Xelldealership"
+              image={xelldealership}
+              image2={xelldealership2}
+              image3={xelldealership3}
+              title={"XELLDEALERSHIP"}
               stack={["React", "Typescript", "Firebase", "CSS", "Vite"]}
-              style={"white"}
+              textS={"white"}
+              text={PROJECT_3_TEXT}
+              stext={
+                "A Store Type Website Where An Admin Can Post Different Products For People That Want To Buy Cars. Uses Google Auth And It Has A Favorite Function."
+              }
               link={"https://xelldealership.netlify.app/"}
               hubLink={"https://github.com/AXODUS21/xelldealership"}
-              image={xelldealership}
-              text={`This car dealership website is built with React and TypeScript, featuring a personalized experience that recognizes the logged-in user. If the user has an admin account, they gain access to exclusive functionality, allowing them to add new cars to the inventory displayed on the store page. This admin-only access ensures that only authorized accounts can modify the car listings, maintaining security and control over the displayed content.`}
+              handlePopUp={handlePopUp}
             />
           </div>
-          <div className="project5">
+          <div className="proj" style={{ "--i": 4 }}>
             <ProjectComponent
-              title="VAIN"
               image={vain}
-              handlePopUp={handlePopUp}
+              image2={vain2}
+              image3={vain3}
+              title={"VAIN"}
               stack={["React", "CSS", "MongoDB", "Vite"]}
-              style={"black"}
+              textS={"black"}
+              text={PROJECT_4_TEXT}
+              stext={
+                "Vain Is A Website Made With React It Is A Multipurpose Website And All its Functions Can Be Activated With A Simple Voice Command."
+              }
               link={"https://vain21.netlify.app/"}
               hubLink={"https://github.com/AXODUS21/vain"}
-              text={
-                "VAIN (Voice All In One) is a versatile website offering multiple utilities and entertainment tools—such as a calculator, a classic snake game, a digital diary, a to-do list, and a rock-paper-scissors game. Each feature is fully accessible through voice commands, creating a seamless, hands-free user experience that combines functionality and fun in a single platform."
-              }
+              handlePopUp={handlePopUp}
             />
           </div>
-        </div>
-        <div className="bottom">
-          <div className="project6 project">
-            <div className="spinning-img-container">
-              <img className="spinning-img2" src={emerse1} alt="vain" />
-              <img className="spinning-img2" src={emerse2} alt="vain" />
-              <img className="spinning-img2" src={emerse3} alt="vain" />
-              <img className="spinning-img2" src={emerse1} alt="vain" />
-              <img className="spinning-img2" src={emerse2} alt="vain" />
-              <img className="spinning-img2" src={emerse3} alt="vain" />
-            </div>
-            <div className="project-p grid pr-2 pl-2">
-              <div className="">
-                <h2 className="font-bold">EMERSE</h2>
-                <a
-                  className="underline atag"
-                  href="https://github.com/AXODUS21/Emerse"
-                >
-                  https://github.com/AXODUS21/Emerse
-                </a>
-              </div>
-              <div
-                className="flex justify-end"
-                onClick={() =>
-                  handlePopUp(
-                    emerse3,
-                    "Emerse",
-                    ["React", "CSS", "MongoDB", "Vite"],
-                    "black",
-                    PROJECT_6_TEXT,
-                    "https://emerse.netlify.app/",
-                    "https://github.com/AXODUS21/Emerse"
-                  )
-                }
-              >
-                <ViewMore />
-              </div>
-            </div>
+          <div className="proj" style={{ "--i": 5 }}>
+            <ProjectComponent
+              image={amazon}
+              image2={amazon2}
+              image3={amazon3}
+              title={"AMAZON-COPY"}
+              stack={["HTML", "CSS", "JS"]}
+              textS={"black"}
+              text={PROJECT_5_TEXT}
+              stext={
+                "An Attempt To Copy The Amazon Website. Made With HTML, CSS, And JS It Has All The Functions A You Would Expect In A Copy"
+              }
+              link={"https://axodus21.github.io/amazon-copy/amazon.html"}
+              hubLink={"https://github.com/AXODUS21/amazon-copy"}
+              handlePopUp={handlePopUp}
+            />
+          </div>
+          <div className="proj" style={{ "--i": 6 }}>
+            <ProjectComponent
+              image={ileap}
+              image2={ileap2}
+              image3={ileap3}
+              title={"ILEAP"}
+              stack={["Firebase", "React", "CSS", "JS"]}
+              textS={"white"}
+              text={PROJECT_6_TEXT}
+              stext={
+                "A School Website Made with ReactJS and Firebase With A Purpose Of Making Finding Jobs/Internships For Students Easier."
+              }
+              link={"https://ileap-a49b9.web.app/"}
+              hubLink={"https://github.com/AXODUS21/ILEAP"}
+              handlePopUp={handlePopUp}
+            />
           </div>
         </div>
       </div>

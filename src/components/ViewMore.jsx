@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 
 const ViewMore = () => {
-
   return (
     <StyledWrapper>
       <button className="btn-53">

@@ -1,4 +1,9 @@
 
+.projects-container{
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
 .projects-container h1{
     margin-bottom: 12px;
     position: absolute;
@@ -11,19 +16,65 @@
     display: flex;
     justify-content: center;
 }
+.box {
+    position: relative;
+    width: 85svh;
+    height: 300px;
+    transform-style: preserve-3d;
+    transform: perspective(1900px);
+    transition: all 1.5s;
+}
+.center-text{
+    font-size: 10svw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: Arial, sans-serif;
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #919191;
+    pointer-events: none;
+}
+.box2 {
+    position: relative;
+    width: 80svw;
+    height: 20svh;
+    transform-style: preserve-3d;
+    transform: perspective(200px);
+    transition: all 1.5s;
+}
+.proj {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: rotateY(calc(var(--i) * 60deg)) translateZ(650px);
+}
+ 
+.projM{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: rotateX(calc(var(--i) * 60deg)) translateZ(190px);
+}
+ 
 .spinning-img-container{
     display: grid;
     width: 100%;
     overflow: hidden;
     gap: 20px;
 }
-.spinning-img2{
-    height: 14svw;
-    animation: spin-down-up 10s linear infinite;
-}
 .spinning-img{
-    height: 14svw;
-    animation: spin-up-down 10s linear infinite;
+    height: 100%;
+    animation: spin-up-down 15s linear infinite;
 }
 .project-box2,
 .project-box1{
@@ -31,40 +82,6 @@
     width: 100%;
     gap: 20px;
     flex-wrap: wrap;
-}
-.top,
-.bottom{
-    flex: 1;
-    flex-basis: 500px;
-}
-.project-box1 .bottom{
-    gap: 20px;
-    width: 50svw;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-.project-box2 .top div,
-.project-box1 .bottom div{
-    height: fit-content;
-}
-.project1{
-    grid-template-columns: 1fr 2fr;
-}
-.project6{
-    grid-template-columns: 2fr 1fr;
-}
-.project-box2 .top{
-    gap: 20px;
-    width: 50svw;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-.project-img{
-    display: flex;
-    justify-content: center;
-}
-.project-img img{
-    height: 10svw;
 }
 .project{
     display: grid;
@@ -74,10 +91,11 @@
     padding: 10px;
     
 }
-.project6,
 .project1{
     display: grid;
-    height: 18.3svw;
+    overflow: hidden;
+    grid-template-columns: 1fr 2fr;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.651);
 }
 .project-description{
     font-size: 0.7em;
@@ -94,16 +112,6 @@
 .project-p{
     z-index: 1;
 }
-.project1,
-.project2,
-.project3,
-.project4,
-.project5,
-.project6 {
-    overflow: hidden;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.651);
-}
-
 .popup{
     position: fixed;
     top: 50%;
@@ -121,14 +129,5 @@
   }
   100% {
     transform: translateY(-330%);
-  }
-}
-
-@keyframes spin-down-up{
-  0% {
-    transform: translateY(-330%);
-  }
-  100% {
-    transform: translateY(0);
   }
 }

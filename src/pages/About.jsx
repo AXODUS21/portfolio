@@ -1,6 +1,6 @@
 import React from 'react'
 import '../css/about.css'
-import pfp from "../photos/2x2.jpg"
+import pfp from "../photos/2x2.png"
 import TechStack from '../components/techStack';
 
 
@@ -9,7 +9,7 @@ const About = () => {
     <div className="about-container">
       <div className="about1">
         <div className="main-hexagon">
-          <img src={pfp} />
+          <img className="object-contain" src={pfp} />
           <div className="tiny-hex tiny-hexagon1"></div>
           <div className="tiny-hex tiny-hexagon2"></div>
           <div className="tiny-hex tiny-hexagon3"></div>

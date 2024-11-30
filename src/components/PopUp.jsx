@@ -4,8 +4,6 @@ import github from '../photos/socials/github.png'
 import link from '../photos/socials/link.png'
 
 const PopUp = ({popUp, details, setPopUp}) => {
-
-  console.log(details)
   return (
     <div className="relative">
       {/* DESKTOP POP UP */}
@@ -80,7 +78,7 @@ const PopUp = ({popUp, details, setPopUp}) => {
         className="popup block md:hidden absolute w-[85svw] h-[85svh] pl-[1svh]"
         style={{
           zIndex: `${popUp ? "9999" : "0"}`,
-          transform: `translate(${popUp ? "-50%, 2%" : "-180%, 2%"})`,
+          transform: `translate(${popUp ? "-3%, -50%" : "-180%, -50%"})`,
         }}
       >
         <button

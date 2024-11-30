@@ -53,7 +53,7 @@ const Contacts = () => {
 
           {/* Map Section */}
           <div
-            className="map absolute_center w-full transition-opacity duration-500"
+            className="map absolute_center w-52 transition-opacity duration-500"
             style={{
               opacity: showMap ? 1 : 0,
               zIndex: showMap ? 2 : 0,

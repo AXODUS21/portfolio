@@ -74,10 +74,8 @@ const PopUp = ({popUp, details, setPopUp}) => {
       </div>
 
       {/* MOBILE POP UP */}
-      <div className="popup-wrapper">
-        <div className="popup-overlay" onClick={() => setPopUp(false)}></div>
         <div
-          className="popup block md:hidden fixed w-[85svw] h-[85svh] pl-[1svh]"
+          className="popup block md:hidden w-[85svw] h-[85svh] pl-[1svh]"
           style={{
             zIndex: `${popUp ? "9999" : "0"}`,
             transform: `translate(${popUp ? "-50%, -50%" : "-180%, -50%"})`,
@@ -144,7 +142,6 @@ const PopUp = ({popUp, details, setPopUp}) => {
             </div>
           </div>
         </div>
-      </div>
     </div>
   );
 }

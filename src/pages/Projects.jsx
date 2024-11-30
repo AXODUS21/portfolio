@@ -90,7 +90,7 @@ import '../css/projects.css'
       <div className="fixed z-[99999]">
         <PopUp popUp={popUp} details={details} setPopUp={setpopUp} /> 
       </div>
-      <div className="buttons absolute sm:bottom-[-20svh] bottom-[-270px] flex gap-10 z-[99] cursor-pointer">
+      <div className="buttons absolute sm:bottom-[-20svh] bottom-[-270px] flex gap-10 cursor-pointer">
         <div onClick={nextSlide} className="next text-2xl text-white">
           <img
             src={arrow}

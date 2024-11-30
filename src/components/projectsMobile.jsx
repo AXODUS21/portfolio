@@ -36,7 +36,7 @@ const ProjectsMobile = ({handlePopUp, degrees}) => {
   return (
       <div
         className="box2"
-        style={{ transform: `perspective(1200px) rotateX(${degrees}deg)` }}
+        style={{ transform: `perspective(5000px) rotateX(${degrees}deg)` }}
       >
         <div className="center-text">PROJECTS</div>
         <div className="projM" style={{ "--i": 1 }}>

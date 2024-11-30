@@ -74,71 +74,72 @@ const PopUp = ({popUp, details, setPopUp}) => {
       </div>
 
       {/* MOBILE POP UP */}
-      <div
-        className="popup block md:hidden fixed w-[85svw] h-[85svh] pl-[1svh]"
-        style={{
-          zIndex: `${popUp ? "9999" : "0"}`,
-          transform: `translate(${popUp ? "-50%, -50%" : "-180%, -50%"})`,
-        }}
-      >
-        <button
-          className="text-black text-sm z-[9999] bg-gray-300 py-2 px-3 font-semibold rounded-full mb-3 absolute top-[-13px] right-[-10px]"
-          onClick={() => setPopUp(false)}
+      <div className="popup-wrapper">
+        <div className="popup-overlay" onClick={() => setPopUp(false)}></div>
+        <div
+          className="popup block md:hidden fixed w-[85svw] h-[85svh] pl-[1svh]"
+          style={{
+            zIndex: `${popUp ? "9999" : "0"}`,
+            transform: `translate(${popUp ? "-50%, -50%" : "-180%, -50%"})`,
+          }}
         >
-          X
-        </button>
+          <button
+            className="text-black text-sm z-[9999] bg-gray-300 py-2 px-3 font-semibold rounded-full mb-3 absolute top-[-13px] right-[-10px]"
+            onClick={() => setPopUp(false)}
+          >
+            X
+          </button>
 
-        <div className="contents">
-          <div className="img">
-            <img className="rounded-md mb-3" src={details.image} />
-          </div>
-          <div className="text-black">
-            <p className="text-xl font-bold text-center mb-2">
-              {details.title}
-            </p>
-            <p className="text-black text-center mb-4 text-[0.8rem]">{details.description}</p>
-          </div>
-          <div className="flex justify-between px-5 items-center">
-            <div className="flex">
-              <a
-                href={details.hubLink}
-                className="z-[999] cursor-pointer"
-                target="blank"
-              >
-                <div className="bg-white p-3 rounded-full">
-                  <img src={github} className="h-10 w-10" />
-                </div>
-              </a>
-
-              <a
-                href={details.link}
-                className="z-[999] cursor-pointer"
-                target="blank"
-              >
-                <div className="bg-white p-3 rounded-full">
-                  <img src={link} className="h-10 w-10" />
-                </div>
-              </a>
+          <div className="contents">
+            <div className="img">
+              <img className="rounded-md mb-3" src={details.image} />
             </div>
+            <div className="text-black">
+              <p className="text-xl font-bold text-center mb-2">
+                {details.title}
+              </p>
+              <p className="text-black text-center mb-4 text-[0.8rem]">
+                {details.description}
+              </p>
+            </div>
+            <div className="flex justify-between px-5 items-center">
+              <div className="flex">
+                <a
+                  href={details.hubLink}
+                  className="z-[999] cursor-pointer"
+                  target="blank"
+                >
+                  <div className="bg-white p-3 rounded-full">
+                    <img src={github} className="h-10 w-10" />
+                  </div>
+                </a>
 
-            <div className="">
-              <div className="grid grid-cols-2 w-fit gap-6">
-                {details.techStacks.map((techStack) => {
-                  let toDisplay = "";
-                  for (let i = 0; i < Stack.length; i++) {
-                    if (Stack[i].name === techStack) {
-                      toDisplay = Stack[i].image;
+                <a
+                  href={details.link}
+                  className="z-[999] cursor-pointer"
+                  target="blank"
+                >
+                  <div className="bg-white p-3 rounded-full">
+                    <img src={link} className="h-10 w-10" />
+                  </div>
+                </a>
+              </div>
+
+              <div className="">
+                <div className="grid grid-cols-2 w-fit gap-6">
+                  {details.techStacks.map((techStack) => {
+                    let toDisplay = "";
+                    for (let i = 0; i < Stack.length; i++) {
+                      if (Stack[i].name === techStack) {
+                        toDisplay = Stack[i].image;
+                      }
                     }
-                  }
 
-                  return (
-                    <img
-                      className="w-9 h-9"
-                      src={toDisplay}
-                      alt={Stack.name}
-                    />
-                  );
-                })}
+                    return (
+                      <img className="w-9 h-9" src={toDisplay} alt={Stack.name} />
+                    );
+                  })}
+                </div>
               </div>
             </div>
           </div>

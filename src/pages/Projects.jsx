@@ -87,6 +87,9 @@ import '../css/projects.css'
     
   return (
     <div className="projects-container flex justify-center">
+      <div className="fixed z-[99999]">
+        <PopUp popUp={popUp} details={details} setPopUp={setpopUp} /> 
+      </div>
       <div className="buttons absolute sm:bottom-[-20svh] bottom-[-270px] flex gap-10 z-[99] cursor-pointer">
         <div onClick={nextSlide} className="next text-2xl text-white">
           <img
@@ -102,10 +105,9 @@ import '../css/projects.css'
           <img src={arrow} alt="arrow" className="bg-white rounded-full" />
         </div>
       </div>
-      <PopUp popUp={popUp} details={details} setPopUp={setpopUp} />
+
 
       {/*MOBILE VIEW */}
-
       <div className="lg:hidden flex">
         <ProjectsMobile handlePopUp={handlePopUp} degrees={degrees} />
       </div>

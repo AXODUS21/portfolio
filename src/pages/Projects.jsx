@@ -23,12 +23,6 @@ import xelldealership2 from "../photos/projects/xelldealership (1).png";
 import xelldealership3 from "../photos/projects/xelldealership (2).png";
 import '../css/projects.css'
 
-
-
-
-
-
-
   const PROJECT_1_TEXT = `GSEAS (Sea of Group Chats) is a dynamic platform designed for creating and managing group chats effortlessly. With GSEAS, users can set up unlimited group chats, engage in real-time conversations, and personalize each chat’s details—including the chat image, member list, and group name. The platform offers a seamless experience for social and collaborative interactions, making it easy to stay connected with multiple groups.`;
   const PROJECT_2_TEXT = `A MERN stack project. this website is a e-ccomerce type of
                 website fully responsive and even has PAYPAL payment
@@ -122,7 +116,9 @@ import '../css/projects.css'
           className="box"
           style={{ transform: `perspective(1900px) rotateY(${degrees}deg)` }}
         >
-          <div className="center-text">PROJECTS</div>
+          <div className="center-text">
+            PROJECTS
+          </div>
           <div className="proj" style={{ "--i": 1 }}>
             <ProjectComponent
               image={gseas}

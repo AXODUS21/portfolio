@@ -11,7 +11,7 @@ const PopUp = ({popUp, details, setPopUp}) => {
         className="hidden md:block popup w-4/5 h-5/6 p-0"
         style={{
           transform: `translate(${popUp ? "-50%, -30%" : "-50%,100%"})`,
-          zIndex: `${popUp ? "9999" : "0"}`,
+          zIndex: `${popUp ? "99999" : "0"}`,
         }}
       >
         <div className="absolute blur-[6.3px] z-[-10]">
@@ -75,10 +75,10 @@ const PopUp = ({popUp, details, setPopUp}) => {
 
       {/* MOBILE POP UP */}
       <div
-        className="popup block md:hidden absolute w-[85svw] h-[85svh] pl-[1svh]"
+        className="popup block md:hidden fixed w-[85svw] h-[85svh] pl-[1svh]"
         style={{
           zIndex: `${popUp ? "9999" : "0"}`,
-          transform: `translate(${popUp ? "-3%, -50%" : "-180%, -50%"})`,
+          transform: `translate(${popUp ? "-50%, -50%" : "-180%, -50%"})`,
         }}
       >
         <button

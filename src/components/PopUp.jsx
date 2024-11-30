@@ -5,7 +5,7 @@ import link from '../photos/socials/link.png'
 
 const PopUp = ({popUp, details, setPopUp}) => {
   return (
-    <div className="relative">
+    <div className="relative bg-white">
       {/* DESKTOP POP UP */}
       <div
         className="hidden md:block popup w-4/5 h-5/6 p-0"

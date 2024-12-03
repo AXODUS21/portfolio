@@ -54,6 +54,7 @@ body{
 }
 .navigation{
   display: flex;
+  font-weight: 550;
   position: fixed;
   z-index: 2;
 }

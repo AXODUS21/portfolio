@@ -16,7 +16,7 @@ const ProjectComponent = ({image,image2,image3, title, stack, textS, text,stext,
                 </a>
               </div>
               <div
-                className="flex justify-start cursor-pointer"
+                className="flex justify-start cursor-pointer text-xs hover:bg-black hover:text-white trnasition-all duration-500 font-bold w-fit h-fit rounded-full px-3 py-2 bg-white text-black "
                 onClick={() =>
                   handlePopUp(
                         image,
@@ -29,16 +29,16 @@ const ProjectComponent = ({image,image2,image3, title, stack, textS, text,stext,
                   )
                 }
               >
-                <ViewMore />
+                SEE MORE
               </div>
             </div>
-            <div className="spinning-img-container">
-              <img className="spinning-img" src={image} alt="vain" />
-              <img className="spinning-img" src={image2} alt="vain" />
-              <img className="spinning-img" src={image3} alt="vain" />
-              <img className="spinning-img" src={image} alt="vain" />
-              <img className="spinning-img" src={image2} alt="vain" />
-              <img className="spinning-img" src={image3} alt="vain" />
+            <div className="spinning-img-container lg:grid hidden">
+              <img className="spinning-img" src={image} />
+              <img className="spinning-img" src={image2} />
+              <img className="spinning-img" src={image3} />
+              <img className="spinning-img" src={image} />
+              <img className="spinning-img" src={image2} />
+              <img className="spinning-img" src={image3} />
             </div>
           </div>
     </div>

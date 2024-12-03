@@ -36,10 +36,10 @@ const ProjectsMobile = ({handlePopUp, degrees, popUp}) => {
   return (
       <div
         className="box2"
-        style={{ transform: `perspective(${popUp ? "50": "1300" }px) rotateX(${degrees}deg)` }}
+        style={{ transform: `perspective(${popUp ? "30": "1300" }px) rotateX(${degrees}deg)` }}
       >
         <div className="center-text" style={{opacity: `${popUp ? "0" : "1"}`}}>PROJECTS</div>
-        <div className="projM" style={{ "--i": 1 }}>
+        <div className="projM" style={{ "--i": 6 }}>
           <ProjectComponent
             image={gseas}
             image2={gseas2}
@@ -109,7 +109,7 @@ const ProjectsMobile = ({handlePopUp, degrees, popUp}) => {
             handlePopUp={handlePopUp}
           />
         </div>
-        <div className="projM" style={{ "--i": 6 }}>
+        <div className="projM" style={{ "--i": 1 }}>
           <ProjectComponent
             image={ileap}
             image2={ileap2}

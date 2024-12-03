@@ -31,13 +31,8 @@ const StyledWrapper = styled.div`
   .btn-53 {
     -webkit-tap-highlight-color: transparent;
     -webkit-appearance: button;
-    background-color: #000;
-    background-image: none;
     color: #fff;
     cursor: pointer;
-    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-      Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
-      Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
     font-size: 100%;
     line-height: 1.5;
     margin: 0;
@@ -82,6 +77,7 @@ const StyledWrapper = styled.div`
     inset: 0;
     place-content: center;
     position: absolute;
+    z-index: 1; /* Added */
     transition: transform 0.2s cubic-bezier(0.87, 0, 0.13, 1);
   }
 
@@ -91,6 +87,8 @@ const StyledWrapper = styled.div`
 
   .btn-53 .letters {
     display: inline-flex;
+    position: relative; /* Added */
+    z-index: 2; /* Added */
   }
 
   .btn-53 span {

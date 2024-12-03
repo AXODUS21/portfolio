@@ -6,7 +6,7 @@ import TechStack from '../components/techStack';
 
 const About = () => {
   return (
-    <div className="about-container">
+    <div className="about-container sm:gap-[70px] gap-[40px]">
       <div className="about1">
         <div className="main-hexagon">
           <img className="object-contain" src={pfp} />

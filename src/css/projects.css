@@ -4,18 +4,6 @@
     height: 100%;
     width: 100%;
 }
-.projects-container h1{
-    margin-bottom: 12px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 5%;
-    color: rgb(255, 255, 255);
-    font-size: 20vw;
-    z-index: -1;
-    display: flex;
-    justify-content: center;
-}
 .box {
     position: relative;
     width: 85svh;
@@ -95,7 +83,6 @@
 }
 .project1{
     display: grid;
-    overflow: hidden;
     grid-template-columns: 1fr 2fr;
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.651);
 }

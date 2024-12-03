@@ -121,7 +121,7 @@ import '../css/projects.css'
           <div className="center-text">
             PROJECTS
           </div>
-          <div className="proj" style={{ "--i": 1 }}>
+          <div className="proj" style={{ "--i": 6 }}>
             <ProjectComponent
               image={gseas}
               image2={gseas2}
@@ -140,9 +140,9 @@ import '../css/projects.css'
           </div>
           <div className="proj" style={{ "--i": 2 }}>
             <ProjectComponent
-              image={emerse1}
+              image={emerse3}
               image2={emerse2}
-              image3={emerse3}
+              image3={emerse1}
               title={"EMERSE"}
               stack={["React", "CSS", "MongoDB", "Vite"]}
               textS={"black"}
@@ -206,7 +206,7 @@ import '../css/projects.css'
               handlePopUp={handlePopUp}
             />
           </div>
-          <div className="proj" style={{ "--i": 6 }}>
+          <div className="proj" style={{ "--i": 1 }}>
             <ProjectComponent
               image={ileap}
               image2={ileap2}

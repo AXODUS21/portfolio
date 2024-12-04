@@ -37,7 +37,7 @@ const Contacts = () => {
       <h1 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 font-bold text-[13svw] z-[-99]">
         CONTACTS
       </h1>
-      <div className="flex justify-center gap-10 px-10 py-14 form-bg">
+      <div className="flex justify-center sm:gap-10 gap-3 px-10 py-14 form-bg">
         <div className="flex items-center socials transition-all duration-500 relative">
           {/* Socials Section */}
           <div
@@ -86,7 +86,7 @@ const Contacts = () => {
               required
             />
             <textarea
-              className="rounded-md py-2 px-3 sm:w-auto w-40 input"
+              className="rounded-md py-2 px-3 sm:w-auto w-40 input max-h-60"
               name="message" // Add 'name' attribute for emailjs to recognize
               placeholder="Your Message..."
               minLength={30}

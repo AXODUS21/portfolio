@@ -1,5 +1,5 @@
 import React from 'react'
-import ViewMore from './ViewMore'
+
 const ProjectComponent = ({image,image2,image3, title, stack, textS, text,stext, link, hubLink, handlePopUp}) => {
   return (
     <div>
@@ -12,7 +12,7 @@ const ProjectComponent = ({image,image2,image3, title, stack, textS, text,stext,
                   className="underline atag"
                   href="https://github.com/AXODUS21/GSEAS"
                 >
-                  https://github.com/AXODUS21/GSEAS
+                  {hubLink}
                 </a>
               </div>
               <div

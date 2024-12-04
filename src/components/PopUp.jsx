@@ -8,7 +8,7 @@ const PopUp = ({popUp, details, setPopUp}) => {
     <div className="relative bg-white">
       {/* DESKTOP POP UP */}
       <div
-        className="hidden md:block popup w-4/5 h-5/6 p-0"
+        className="hidden lg:block popup w-4/5 h-5/6 p-0"
         style={{
           transform: `translate(${popUp ? "-50%, -30%" : "-50%,100%"})`,
           zIndex: `${popUp ? "99999" : "0"}`,
@@ -75,7 +75,7 @@ const PopUp = ({popUp, details, setPopUp}) => {
 
       {/* MOBILE POP UP */}
         <div
-          className="popup block md:hidden w-[85svw] h-[85svh] pl-[1svh]"
+          className="popup block lg:hidden w-[85svw] h-[85svh] pl-[1svh]"
           style={{
             zIndex: `${popUp ? "9999" : "0"}`,
             transform: `translate(${popUp ? "-50%, -50%" : "-180%, -50%"})`,

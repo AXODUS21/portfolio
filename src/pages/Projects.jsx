@@ -117,7 +117,7 @@ import '../css/projects.css'
           s
           style={{
             transform: `perspective(${
-              popUp ? "500" : "1900"
+              popUp ? "200" : "1900"
             }px) rotateY(${degrees}deg)`,
           }}
         >

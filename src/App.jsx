@@ -74,26 +74,28 @@ function App() {
   }, [offsetY]);
 
   useEffect(() => {
-    // Custom scroll handler for sensitivity
+    // Custom scroll handler with conditional logic
     const scrollHandler = (event) => {
-      event.preventDefault();
-      setNavOffSetY(0)
-      const scrollAmount = event.deltaY * scrollSensitivity; // Adjust sensitivity here
-      window.scrollBy({ top: scrollAmount, behavior: "smooth" });
+      if (window.innerWidth > 768) {
+        // Disable on small screens (e.g., less than 768px)
+        event.preventDefault();
+        setNavOffSetY(0);
+        const scrollAmount = event.deltaY * scrollSensitivity;
+        window.scrollBy({ top: scrollAmount, behavior: "smooth" });
+      }
     };
-
-    window.addEventListener("wheel", scrollHandler, { passive: false });
 
     // Regular scroll event to update offsetY
     const scrollUpdateHandler = () => {
       setOffsetY(window.scrollY);
     };
 
+    window.addEventListener("wheel", scrollHandler, { passive: false });
     window.addEventListener("scroll", scrollUpdateHandler);
 
     return () => {
       window.removeEventListener("wheel", scrollHandler);
-      window.removeEventListener("scroll", scrollUpdateHandler); // Cleanup
+      window.removeEventListener("scroll", scrollUpdateHandler);
     };
   }, [scrollSensitivity]);
 

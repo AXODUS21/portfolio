@@ -1,6 +1,8 @@
 import React from 'react'
+import { useColor } from '../globals/global'
 
 const ProjectComponent = ({image,image2,image3, title, stack, textS, text,stext, link, hubLink, handlePopUp}) => {
+
   return (
     <div>
         <div className="project1 sm:h-[18.3svw] h-[20svh] project mb-12">

@@ -6,8 +6,10 @@ import Testimonials from "./pages/Testimonials";
 import Contacts from "./pages/Contacts";
 import "./App.css";
 import NavigationIcon from "./components/NavigationIcon";
+import { useColor } from "./globals/global";
 
 function App() {
+  const {bgColor} = useColor();
   const [offsetY, setOffsetY] = useState(0);
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState({
@@ -153,77 +155,77 @@ function App() {
   };
 
   return (
-    <div
-      className="project-body"
-      style={{ transform: `translateY(${offsetY * 1}px)` }}
-    >
       <div
-        className="page-scroll-progress"
-        style={{
-          width: `${navOffset * 6 || offsetY * 0.2}vw`,
-          maxWidth: "100vw", // Set a maximum width of 100vw
-        }}
-      ></div>
-
-      <div
-        className="navigation z-[100] " 
-        onClick={() => {
-          setIsNavOpen((prev) => !prev);
-        }}
-        onClickCapture={(e) => e.preventDefault()} // Prevent default click behavior
+        className="project-body"
+        style={{ transform: `translateY(${offsetY * 1}px)`, "--bgColor": `#${bgColor}`}}
       >
-        <NavigationIcon isChecked={isNavOpen} />
+        <div
+          className="page-scroll-progress"
+          style={{
+            width: `${navOffset * 6 || offsetY * 0.2}vw`,
+            maxWidth: "100vw", // Set a maximum width of 100vw
+          }}
+        ></div>
 
-        <div className={`nav-bar ${isNavOpen ? "tract" : "retract"}`}>
-          <div onClick={() => handleNav("home")} className="to">
-            Home →
+        <div
+          className="navigation z-[100] "
+          onClick={() => {
+            setIsNavOpen((prev) => !prev);
+          }}
+          onClickCapture={(e) => e.preventDefault()} // Prevent default click behavior
+        >
+          <NavigationIcon isChecked={isNavOpen} />
+
+          <div className={`nav-bar ${isNavOpen ? "tract" : "retract"}`}>
+            <div onClick={() => handleNav("home")} className="to">
+              Home →
+            </div>
+            <div onClick={() => handleNav("about")} className="to">
+              About →
+            </div>
+            <div onClick={() => handleNav("projects")} className="to">
+              Projects →
+            </div>
+            <div onClick={() => handleNav("testimonials")} className="to">
+              Testimonials →
+            </div>
+            <div onClick={() => handleNav("contacts")} className="to">
+              Contacts →
+            </div>
           </div>
-          <div onClick={() => handleNav("about")} className="to">
-            About →
+        </div>
+
+        <div className="pages-container">
+          <div className="page home" style={{ opacity: currentPage.home }}>
+            <Home />
           </div>
-          <div onClick={() => handleNav("projects")} className="to">
-            Projects →
+          <div className="page about" style={{ opacity: currentPage.about }}>
+            <About />
           </div>
-          <div onClick={() => handleNav("testimonials")} className="to">
-            Testimonials →
+          <div
+            className={`page projects ${
+              currentPage.projects === 1 ? "z-[99]" : "z-[1]"
+            }`}
+            style={{ opacity: currentPage.projects }}
+          >
+            <Projects />
           </div>
-          <div onClick={() => handleNav("contacts")} className="to">
-            Contacts →
+          <div
+            className="page testimonials z-[-10] pt-20"
+            style={{ opacity: currentPage.testimonials }}
+          >
+            <Testimonials />
+          </div>
+          <div
+            className={`page contacts ${
+              currentPage.contacts === 1 ? "z-[999]" : "z-[1]"
+            }`}
+            style={{ opacity: currentPage.contacts }}
+          >
+            <Contacts />
           </div>
         </div>
       </div>
-
-      <div className="pages-container">
-        <div className="page home" style={{ opacity: currentPage.home }}>
-          <Home />
-        </div>
-        <div className="page about" style={{ opacity: currentPage.about }}>
-          <About />
-        </div>
-        <div
-          className={`page projects ${
-            currentPage.projects === 1 ? "z-[99]" : "z-[1]"
-          }`}
-          style={{ opacity: currentPage.projects }}
-        >
-          <Projects />
-        </div>
-        <div
-          className="page testimonials z-[-10] pt-20"
-          style={{ opacity: currentPage.testimonials }}
-        >
-          <Testimonials />
-        </div>
-        <div
-          className={`page contacts ${
-            currentPage.contacts === 1 ? "z-[999]" : "z-[1]"
-          }`}
-          style={{ opacity: currentPage.contacts }}
-        >
-          <Contacts />
-        </div>
-      </div>
-    </div>
   );
 }
 

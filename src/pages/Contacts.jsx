@@ -37,7 +37,7 @@ const Contacts = () => {
       <h1 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 font-bold text-[13svw] z-[-99]">
         CONTACTS
       </h1>
-      <div className="flex justify-center sm:gap-10 gap-3 px-10 py-14 form-bg">
+      <div className="flex justify-center sm:gap-10 gap-0 sm:px-10 px-2 py-14 form-bg">
         <div className="flex items-center socials transition-all duration-500 relative">
           {/* Socials Section */}
           <div

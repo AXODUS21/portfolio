@@ -157,7 +157,7 @@ function App() {
   return (
       <div
         className="project-body"
-        style={{ transform: `translateY(${offsetY * 1}px)`, "--bgColor": `#${bgColor}`}}
+        style={{ transform: `translateY(${offsetY * 1}px)`}}
       >
         <div
           className="page-scroll-progress"

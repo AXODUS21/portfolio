@@ -11,24 +11,8 @@
 body{
   overflow-x: hidden;
   background-color: #000000;
-}
-.page-scroll-progress{
-    position: fixed;
-    background-color: #EEEEEE;
-    width: 100svw;
-    height: 5px;
-    transition: all 0.5s ease-in-out;
-}
-.pages-container{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100svh;
-}
-.project-body{
   height: 100.6svh;
-  background: var(--bgColor);
+  background: black;
   --gap: 5em;
   --line: 1px;
   --color: rgba(255, 255, 255, 0.2);
@@ -46,6 +30,20 @@ body{
       var(--color) var(--gap)
     );
   background-size: var(--gap) var(--gap);
+}
+.page-scroll-progress{
+    position: fixed;
+    background-color: #EEEEEE;
+    width: 100svw;
+    height: 5px;
+    transition: all 0.5s ease-in-out;
+}
+.pages-container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100svh;
 }
 .page{
     color: white;

@@ -73,7 +73,7 @@ const ProjectsMobile = ({handlePopUp, degrees, popUp}) => {
           handlePopUp={handlePopUp}
         />
       </div>
-      <div className="projM" style={{ "--i": 3 }}>
+      <div className="projM" style={{ "--i": 1 }}>
         <ProjectComponent
           image={xelldealership}
           image2={xelldealership2}
@@ -115,7 +115,7 @@ const ProjectsMobile = ({handlePopUp, degrees, popUp}) => {
           handlePopUp={handlePopUp}
         />
       </div>
-      <div className="projM" style={{ "--i": 1 }}>
+      <div className="projM" style={{ "--i": 3 }}>
         <ProjectComponent
           image={AG}
           image2={AG2}

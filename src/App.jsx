@@ -9,7 +9,7 @@ import NavigationIcon from "./components/NavigationIcon";
 import { useColor } from "./globals/global";
 
 function App() {
-  const {bgColor} = useColor();
+  const { bgColor } = useColor();
   const [offsetY, setOffsetY] = useState(0);
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState({
@@ -20,11 +20,10 @@ function App() {
     contacts: 0,
   });
   const [navOffset, setNavOffSetY] = useState(0);
-  const scrollSensitivity = 0.3; // Default sensitivity
+  const scrollSensitivity = 0.01; // Default sensitivity
 
   const handlePage = () => {
-    console.log(offsetY * 0.2);
-    if (offsetY * 0.2 <= 15) {
+    if (offsetY * 1 <= 15) {
       setCurrentPage({
         home: 1,
         about: 0,
@@ -32,8 +31,7 @@ function App() {
         testimonials: 0,
         contacts: 0,
       });
-    }
-    if (offsetY * 0.2 >= 15 && offsetY * 0.2 <= 40) {
+    } else if (offsetY * 1 > 15 && offsetY * 1 <= 40) {
       setCurrentPage({
         home: 0,
         about: 1,
@@ -41,8 +39,7 @@ function App() {
         testimonials: 0,
         contacts: 0,
       });
-    }
-    if (offsetY * 0.2 >= 40 && offsetY * 0.2 <= 61) {
+    } else if (offsetY * 1 > 40 && offsetY * 1 <= 61) {
       setCurrentPage({
         home: 0,
         about: 0,
@@ -50,8 +47,7 @@ function App() {
         testimonials: 0,
         contacts: 0,
       });
-    }
-    if (offsetY * 0.2 >= 61 && offsetY * 0.2 <= 80) {
+    } else if (offsetY * 1 > 61 && offsetY * 1 <= 80) {
       setCurrentPage({
         home: 0,
         about: 0,
@@ -59,8 +55,7 @@ function App() {
         testimonials: 1,
         contacts: 0,
       });
-    }
-    if (offsetY * 0.2 >= 80) {
+    } else {
       setCurrentPage({
         home: 0,
         about: 0,
@@ -76,10 +71,18 @@ function App() {
   }, [offsetY]);
 
   useEffect(() => {
-    // Custom scroll handler with conditional logic
+    // Apply offsetY value to body style
+    document.body.style.transform = `translateY(${offsetY}px)`;
+
+    return () => {
+      // Cleanup by resetting the body's transform
+      document.body.style.transform = "";
+    };
+  }, [offsetY]);
+
+  useEffect(() => {
     const scrollHandler = (event) => {
       if (window.innerWidth > 768) {
-        // Disable on small screens (e.g., less than 768px)
         event.preventDefault();
         setNavOffSetY(0);
         const scrollAmount = event.deltaY * scrollSensitivity;
@@ -87,7 +90,6 @@ function App() {
       }
     };
 
-    // Regular scroll event to update offsetY
     const scrollUpdateHandler = () => {
       setOffsetY(window.scrollY);
     };
@@ -102,130 +104,91 @@ function App() {
   }, [scrollSensitivity]);
 
   const handleNav = (location) => {
-    if (location === "home") {
-      setCurrentPage({
-        home: 1,
-        about: 0,
-        projects: 0,
-        testimonials: 0,
-        contacts: 0,
-      });
-      setNavOffSetY(0);
-    }
-    if (location === "about") {
-      setCurrentPage({
-        home: 0,
-        about: 1,
-        projects: 0,
-        testimonials: 0,
-        contacts: 0,
-      });
-      setNavOffSetY(3.5);
-    }
-    if (location === "projects") {
-      setCurrentPage({
-        home: 0,
-        about: 0,
-        projects: 1,
-        testimonials: 0,
-        contacts: 0,
-      });
-      setNavOffSetY(7);
-    }
-    if (location === "testimonials") {
-      setCurrentPage({
-        home: 0,
-        about: 0,
-        projects: 0,
-        testimonials: 1,
-        contacts: 0,
-      });
-      setNavOffSetY(11);
-    }
-    if (location === "contacts") {
-      setCurrentPage({
-        home: 0,
-        about: 0,
-        projects: 0,
-        testimonials: 0,
-        contacts: 1,
-      });
-      setNavOffSetY(17);
-    }
+    const pageOffsets = {
+      home: 0,
+      about: 3.5,
+      projects: 7,
+      testimonials: 11,
+      contacts: 17,
+    };
+
+    setCurrentPage({
+      home: location === "home" ? 1 : 0,
+      about: location === "about" ? 1 : 0,
+      projects: location === "projects" ? 1 : 0,
+      testimonials: location === "testimonials" ? 1 : 0,
+      contacts: location === "contacts" ? 1 : 0,
+    });
+    setNavOffSetY(pageOffsets[location]);
   };
 
+  console.log(offsetY * 1)
   return (
+    <div className="project-body">
       <div
-        className="project-body"
-        style={{ transform: `translateY(${offsetY * 1}px)`}}
+        className="page-scroll-progress"
+        style={{
+          width: `${navOffset * 6 || offsetY * 1}vw`,
+          maxWidth: "100vw",
+        }}
+      ></div>
+
+      <div
+        className="navigation z-[100]"
+        onClick={() => setIsNavOpen((prev) => !prev)}
+        onClickCapture={(e) => e.preventDefault()}
       >
-        <div
-          className="page-scroll-progress"
-          style={{
-            width: `${navOffset * 6 || offsetY * 0.2}vw`,
-            maxWidth: "100vw", // Set a maximum width of 100vw
-          }}
-        ></div>
-
-        <div
-          className="navigation z-[100] "
-          onClick={() => {
-            setIsNavOpen((prev) => !prev);
-          }}
-          onClickCapture={(e) => e.preventDefault()} // Prevent default click behavior
-        >
-          <NavigationIcon isChecked={isNavOpen} />
-
-          <div className={`nav-bar ${isNavOpen ? "tract" : "retract"}`}>
-            <div onClick={() => handleNav("home")} className="to">
-              Home →
-            </div>
-            <div onClick={() => handleNav("about")} className="to">
-              About →
-            </div>
-            <div onClick={() => handleNav("projects")} className="to">
-              Projects →
-            </div>
-            <div onClick={() => handleNav("testimonials")} className="to">
-              Testimonials →
-            </div>
-            <div onClick={() => handleNav("contacts")} className="to">
-              Contacts →
-            </div>
+        <NavigationIcon isChecked={isNavOpen} />
+        <div className={`nav-bar ${isNavOpen ? "tract" : "retract"}`}>
+          <div onClick={() => handleNav("home")} className="to">
+            Home →
           </div>
-        </div>
-
-        <div className="pages-container">
-          <div className="page home" style={{ opacity: currentPage.home }}>
-            <Home />
+          <div onClick={() => handleNav("about")} className="to">
+            About →
           </div>
-          <div className="page about" style={{ opacity: currentPage.about }}>
-            <About />
+          <div onClick={() => handleNav("projects")} className="to">
+            Projects →
           </div>
-          <div
-            className={`page projects ${
-              currentPage.projects === 1 ? "z-[99]" : "z-[1]"
-            }`}
-            style={{ opacity: currentPage.projects }}
-          >
-            <Projects />
+          <div onClick={() => handleNav("testimonials")} className="to">
+            Testimonials →
           </div>
-          <div
-            className="page testimonials z-[-10] pt-20"
-            style={{ opacity: currentPage.testimonials }}
-          >
-            <Testimonials />
-          </div>
-          <div
-            className={`page contacts ${
-              currentPage.contacts === 1 ? "z-[999]" : "z-[1]"
-            }`}
-            style={{ opacity: currentPage.contacts }}
-          >
-            <Contacts />
+          <div onClick={() => handleNav("contacts")} className="to">
+            Contacts →
           </div>
         </div>
       </div>
+
+      <div className="pages-container">
+        <div className="page home" style={{ opacity: currentPage.home }}>
+          <Home />
+        </div>
+        <div className="page about" style={{ opacity: currentPage.about }}>
+          <About />
+        </div>
+        <div
+          className={`page projects ${
+            currentPage.projects === 1 ? "z-[99]" : "z-[1]"
+          }`}
+          style={{ opacity: currentPage.projects }}
+        >
+          <Projects />
+        </div>
+        <div
+          className="page testimonials z-[-10] pt-20"
+          style={{ opacity: currentPage.testimonials }}
+        >
+          <Testimonials />
+        </div>
+        <div
+          className={`page contacts ${
+            currentPage.contacts === 1 ? "z-[999]" : "z-[1]"
+          }`}
+          style={{ opacity: currentPage.contacts }}
+        >
+          <Contacts />
+        </div>
+      </div>
+    </div>
   );
 }
 

@@ -48,8 +48,6 @@ const ProjectsMobile = ({handlePopUp, degrees, popUp}) => {
       <div className="projM" style={{ "--i": 6 }}>
         <ProjectComponent
           image={gseas}
-          image2={gseas2}
-          image3={gseas3}
           title={"GSEAS"}
           stack={["NextJS", "MongoDB", "CSS", "Tailwind"]}
           textS={"white"}
@@ -62,8 +60,6 @@ const ProjectsMobile = ({handlePopUp, degrees, popUp}) => {
       <div className="projM" style={{ "--i": 2 }}>
         <ProjectComponent
           image={emerse1}
-          image2={emerse2}
-          image3={emerse3}
           title={"EMERSE"}
           stack={["React", "CSS", "Vite"]}
           textS={"black"}
@@ -76,8 +72,6 @@ const ProjectsMobile = ({handlePopUp, degrees, popUp}) => {
       <div className="projM" style={{ "--i": 1 }}>
         <ProjectComponent
           image={xelldealership}
-          image2={xelldealership2}
-          image3={xelldealership3}
           title={"XELLDEALERSHIP"}
           stack={["React", "Typescript", "Firebase", "CSS", "Vite"]}
           textS={"white"}
@@ -90,8 +84,6 @@ const ProjectsMobile = ({handlePopUp, degrees, popUp}) => {
       <div className="projM" style={{ "--i": 4 }}>
         <ProjectComponent
           image={vain}
-          image2={vain2}
-          image3={vain3}
           title={"VAIN"}
           stack={["React", "CSS", "Vite"]}
           textS={"black"}
@@ -104,8 +96,6 @@ const ProjectsMobile = ({handlePopUp, degrees, popUp}) => {
       <div className="projM" style={{ "--i": 5 }}>
         <ProjectComponent
           image={amazon}
-          image2={amazon2}
-          image3={amazon3}
           title={"AMAZON-COPY"}
           stack={["HTML", "CSS", "JS"]}
           textS={"black"}
@@ -118,8 +108,6 @@ const ProjectsMobile = ({handlePopUp, degrees, popUp}) => {
       <div className="projM" style={{ "--i": 3 }}>
         <ProjectComponent
           image={AG}
-          image2={AG2}
-          image3={AG3}
           title={"AG DENTAL CLINIC"}
           stack={["NextJS", "CSS", "Tailwind"]}
           textS={"black"}

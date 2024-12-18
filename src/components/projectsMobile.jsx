@@ -1,23 +1,11 @@
 import React, { useState } from 'react';
 import ProjectComponent from './ProjectComponent';
 import gseas from "../photos/projects/gseas (1).png";
-import gseas2 from "../photos/projects/gseas (2).png";
-import gseas3 from "../photos/projects/gseas (3).png";
 import emerse1 from "../photos/projects/Emerse (1).png";
-import emerse2 from "../photos/projects/Emerse (2).png";
-import emerse3 from "../photos/projects/Emerse (3).png";
 import vain from "../photos/projects/vain (1).png";
-import vain2 from "../photos/projects/vain (2).png";
-import vain3 from "../photos/projects/vain (3).png";
 import amazon from "../photos/projects/amazon.png";
-import amazon2 from "../photos/projects/amazon.png";
-import amazon3 from "../photos/projects/amazon.png";
 import AG from "../photos/projects/AG (1).png";
-import AG2 from "../photos/projects/AG (2).png";
-import AG3 from "../photos/projects/AG (3).png";
 import xelldealership from "../photos/projects/xelldealership.png";
-import xelldealership2 from "../photos/projects/xelldealership (1).png";
-import xelldealership3 from "../photos/projects/xelldealership (2).png";
 import "../css/projects.css";
 import { useColor } from '../globals/global';
 

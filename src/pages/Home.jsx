@@ -1,7 +1,6 @@
 import React from 'react'
 import '../css/home.css'
 import Loader from '../components/Loader'
-import chevron from "../photos/chevron.png"
 import Button from '../components/Scroll';
 
 const Home = () => {
@@ -26,11 +25,6 @@ const Home = () => {
         <Button />
       </div>
       <div className="text-center text-sm sm:hidden block">
-        <div className="flex justify-center gap-3">
-          <img src={chevron} alt="chevron" className='rotate-90' />
-              Drag The Screen Slowly To Scroll
-          <img src={chevron} alt="chevron" className='rotate-[270deg]' />
-        </div>
       </div>
     </div>
   );

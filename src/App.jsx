@@ -86,7 +86,7 @@ function App() {
        window.innerWidth <= 768;
 
      // Adjust sensitivity based on device
-     setScrollSensitivity(isMobile ? 2 : 0.01); // Higher sensitivity for mobile, lower for desktop
+     setScrollSensitivity(isMobile ? 3 : 0.01); // Higher sensitivity for mobile, lower for desktop
    }, []);
 
    useEffect(() => {

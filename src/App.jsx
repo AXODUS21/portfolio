@@ -86,7 +86,7 @@ function App() {
        window.innerWidth <= 768;
 
      // Adjust sensitivity based on device
-     setScrollSensitivity(isMobile ? 3 : 0.01); // Higher sensitivity for mobile, lower for desktop
+     setScrollSensitivity(isMobile ? 5 : 0.01); // Higher sensitivity for mobile, lower for desktop
    }, []);
 
    useEffect(() => {
@@ -160,7 +160,6 @@ function App() {
     setNavOffSetY(pageOffsets[location]);
   };
 
-  console.log(offsetY * 1)
   return (
     <div className="project-body">
       <div

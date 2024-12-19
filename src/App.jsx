@@ -80,28 +80,37 @@ function App() {
     };
   }, [offsetY]);
 
-  useEffect(() => {
-    const scrollHandler = (event) => {
-      if (window.innerWidth > 768) {
-        event.preventDefault();
-        setNavOffSetY(0);
-        const scrollAmount = event.deltaY * scrollSensitivity;
-        window.scrollBy({ top: scrollAmount, behavior: "smooth" });
-      }
-    };
+useEffect(() => {
+  let touchStartY = 0;
+  let touchEndY = 0;
 
-    const scrollUpdateHandler = () => {
-      setOffsetY(window.scrollY);
-    };
+  const touchStartHandler = (event) => {
+    touchStartY = event.touches[0].clientY;
+  };
 
-    window.addEventListener("wheel", scrollHandler, { passive: false });
-    window.addEventListener("scroll", scrollUpdateHandler);
+  const touchMoveHandler = (event) => {
+    event.preventDefault(); // Prevent default scrolling behavior
+    touchEndY = event.touches[0].clientY;
+    const scrollAmount = (touchStartY - touchEndY) * scrollSensitivity;
+    window.scrollBy({ top: scrollAmount, behavior: "smooth" });
+    touchStartY = touchEndY; // Reset for continuous scrolling
+  };
 
-    return () => {
-      window.removeEventListener("wheel", scrollHandler);
-      window.removeEventListener("scroll", scrollUpdateHandler);
-    };
-  }, [scrollSensitivity]);
+  const scrollUpdateHandler = () => {
+    setOffsetY(window.scrollY);
+  };
+
+  window.addEventListener("touchstart", touchStartHandler, { passive: false });
+  window.addEventListener("touchmove", touchMoveHandler, { passive: false });
+  window.addEventListener("scroll", scrollUpdateHandler);
+
+  return () => {
+    window.removeEventListener("touchstart", touchStartHandler);
+    window.removeEventListener("touchmove", touchMoveHandler);
+    window.removeEventListener("scroll", scrollUpdateHandler);
+  };
+}, [scrollSensitivity]);
+
 
   const handleNav = (location) => {
     const pageOffsets = {

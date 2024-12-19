@@ -20,7 +20,7 @@ function App() {
     contacts: 0,
   });
   const [navOffset, setNavOffSetY] = useState(0);
-  const scrollSensitivity = 0.01; // Default sensitivity
+   const [scrollSensitivity, setScrollSensitivity] = useState(0.01);
 
   const handlePage = () => {
     if (offsetY * 1 <= 15) {
@@ -80,36 +80,65 @@ function App() {
     };
   }, [offsetY]);
 
-useEffect(() => {
-  let touchStartY = 0;
-  let touchEndY = 0;
+   useEffect(() => {
+     const isMobile =
+       /Mobi|Android|iPhone|iPad|iPod/.test(navigator.userAgent) ||
+       window.innerWidth <= 768;
 
-  const touchStartHandler = (event) => {
-    touchStartY = event.touches[0].clientY;
-  };
+     // Adjust sensitivity based on device
+     setScrollSensitivity(isMobile ? 0.1 : 0.01); // Higher sensitivity for mobile, lower for desktop
+   }, []);
 
-  const touchMoveHandler = (event) => {
-    event.preventDefault(); // Prevent default scrolling behavior
-    touchEndY = event.touches[0].clientY;
-    const scrollAmount = (touchStartY - touchEndY) * scrollSensitivity;
-    window.scrollBy({ top: scrollAmount, behavior: "smooth" });
-    touchStartY = touchEndY; // Reset for continuous scrolling
-  };
+   useEffect(() => {
+     let touchStartY = 0;
+     let touchEndY = 0;
 
-  const scrollUpdateHandler = () => {
-    setOffsetY(window.scrollY);
-  };
+     const touchStartHandler = (event) => {
+       touchStartY = event.touches[0].clientY;
+     };
 
-  window.addEventListener("touchstart", touchStartHandler, { passive: false });
-  window.addEventListener("touchmove", touchMoveHandler, { passive: false });
-  window.addEventListener("scroll", scrollUpdateHandler);
+     const touchMoveHandler = (event) => {
+       event.preventDefault();
+       touchEndY = event.touches[0].clientY;
+       const scrollAmount = (touchStartY - touchEndY) * scrollSensitivity;
+       window.scrollBy({ top: scrollAmount, behavior: "smooth" });
+       touchStartY = touchEndY; // Reset for continuous scrolling
+     };
 
-  return () => {
-    window.removeEventListener("touchstart", touchStartHandler);
-    window.removeEventListener("touchmove", touchMoveHandler);
-    window.removeEventListener("scroll", scrollUpdateHandler);
-  };
-}, [scrollSensitivity]);
+     const scrollHandler = (event) => {
+       event.preventDefault();
+       const scrollAmount = event.deltaY * scrollSensitivity;
+       window.scrollBy({ top: scrollAmount, behavior: "smooth" });
+     };
+
+     const scrollUpdateHandler = () => {
+       setOffsetY(window.scrollY);
+     };
+
+     // Add appropriate event listeners
+     if (
+       /Mobi|Android|iPhone|iPad|iPod/.test(navigator.userAgent) ||
+       window.innerWidth <= 768
+     ) {
+       window.addEventListener("touchstart", touchStartHandler, {
+         passive: false,
+       });
+       window.addEventListener("touchmove", touchMoveHandler, {
+         passive: false,
+       });
+     } else {
+       window.addEventListener("wheel", scrollHandler, { passive: false });
+     }
+
+     window.addEventListener("scroll", scrollUpdateHandler);
+
+     return () => {
+       window.removeEventListener("touchstart", touchStartHandler);
+       window.removeEventListener("touchmove", touchMoveHandler);
+       window.removeEventListener("wheel", scrollHandler);
+       window.removeEventListener("scroll", scrollUpdateHandler);
+     };
+   }, [scrollSensitivity]); 
 
 
   const handleNav = (location) => {

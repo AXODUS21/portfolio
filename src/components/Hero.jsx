@@ -81,7 +81,6 @@ const Hero = () => {
 
   return (
     <div className="relative h-dvh w-screen overflow-x-hidden">
-
       {isLoading && (
         <div className="flex-center absolute z-[100] h-dvh w-screen overflow-hidden bg-violet-50 ">
           <div className="three-body">
@@ -118,6 +117,7 @@ const Hero = () => {
             src={getVideoSrc(currrentIndex)}
             loop
             muted
+            playsinline
             autoPlay
             id="next-video"
             className="absolute-center invisible absolute z-20 size-64 object-cover object-center"
@@ -127,6 +127,7 @@ const Hero = () => {
             src={getVideoSrc(
               currrentIndex === totalVideos - 1 ? 1 : currrentIndex
             )}
+            playsinline
             autoPlay
             muted
             loop

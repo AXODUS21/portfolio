@@ -32,43 +32,26 @@ const BentoTilt = ({children, className = ''}) => {
     )
 }
 
-const BentoCard = ({ src, title, description }) => {
-  const videoRef = useRef(null);
+const BentoCard = ({src, title, description}) => {
+    
 
-  const handleMouseEnter = () => {
-    if (videoRef.current) {
-      videoRef.current.play();
-    }
-  };
-
-  const handleMouseLeave = () => {
-    if (videoRef.current) {
-      videoRef.current.pause();
-    }
-  };
-
-  return (
-    <div
-      className="relative size-full"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
-      <video
-        ref={videoRef}
-        src={src}
-        loop
-        muted
-        className="absolute left-0 top-0 size-full object-center"
-      />
-      <div className="relative z-10 flex size-full flex-col justify-between p-5 text-yellow-300">
-        <div>
-          <h1 className="bento-title special-font">{title}</h1>
-          <p className="mt-3 max-w-64 text-xs md:text-base">{description}</p>
+    return (
+        <div className='relative size-full '>
+            <video
+                src={src}
+                loop
+                muted
+                autoPlay
+                className='absolute left-0 top-0 size-full object-center'
+            />
+            <div className="relative z-10 flex size-full flex-col justify-between p-5 text-yellow-300">
+                <div>
+                    <h1 className='bento-title special-font'>{title}</h1>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  );
-};
+    )
+}
 
 const Projects = () => {
   return (
@@ -85,11 +68,11 @@ const Projects = () => {
             src="/videos/feature-1.mp4"
             title={
               <>
-                 GSe<b>a</b>s
+                AG d<b>e</b>ntal
               </>
             }
             description={
-              "A Live Chat Web App Made with NextJS and MongoDB. Uses Socket.io And Render For The Live Functionality"
+              "A Website For A Local Dental Clinic Located In Candelaria Philippines. Made with NextJs With Fast Image Processing Supported By Vercel."
             }
           />
         </BentoTilt>
@@ -98,10 +81,13 @@ const Projects = () => {
           <BentoTilt className="bento-tilt_1 row-span-1 md:col-span-1 md:row-span-2">
             <BentoCard
               src="/videos/feature-2.mp4"
-              title={<>
-              AG D<b>e</b>ntal</>}
+              title={
+                <>
+                  GSe<b>a</b>s
+                </>
+              }
               description={
-                "A Website For A Local Dental Clinic Located In Candelaria Philippines. Made with NextJs With Fast Image Processing Supported By Vercel."
+                "A Live Chat Web App Made with NextJS and MongoDB. Uses Socket.io And Render For The Live Functionality"
               }
             />
           </BentoTilt>

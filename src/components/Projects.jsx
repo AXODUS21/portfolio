@@ -68,7 +68,7 @@ const Projects = () => {
             src="/videos/feature-1.mp4"
             title={
               <>
-                AG d<b>e</b>ntal
+                 Gse<b>a</b>s
               </>
             }
             description={
@@ -83,7 +83,7 @@ const Projects = () => {
               src="/videos/feature-2.mp4"
               title={
                 <>
-                  GSe<b>a</b>s
+                  AG d<b>e</b>ntal
                 </>
               }
               description={

@@ -32,9 +32,8 @@ const BentoTilt = ({children, className = ''}) => {
     )
 }
 
-const BentoCard = ({src, title, description}) => {
+const BentoCard = ({src, title}) => {
     
-
     return (
       <div className="relative size-full ">
         <video
@@ -42,7 +41,7 @@ const BentoCard = ({src, title, description}) => {
           loop
           muted
           autoPlay
-          playsinline
+          playsInline
           className="absolute left-0 top-0 size-full object-center"
         />
         <div className="relative z-10 flex size-full flex-col justify-between p-5 text-yellow-300">

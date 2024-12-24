@@ -7,14 +7,34 @@ import { ScrollTrigger } from "gsap/all";
 
 gsap.registerPlugin(ScrollTrigger)
 
+const usePreventScroll = (isLoading) => {
+  useEffect(() => {
+    if (isLoading) {
+      // Prevent scrolling
+      document.body.style.overflowY = "hidden";
+    } else {
+      // Allow scrolling
+      document.body.style.overflowY = "auto";
+    }
+
+    // Cleanup on component unmount
+    return () => {
+      document.body.style.overflowY = "auto";
+    };
+  }, [isLoading]);
+};
+
+
 const Hero = () => {
     const [currrentIndex, setCurrentIndex] = useState(1);
     const [hasClicked, setHasClicked] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
     const [loadedVideos, setLoadedVideos] = useState(0)
-
     const totalVideos = 3;
     const nextVideoRef = useRef(null);
+
+
+    usePreventScroll(isLoading);
 
     const handleVideoLoad = () => {
         setLoadedVideos((prev) => prev + 1)
@@ -78,16 +98,12 @@ const Hero = () => {
     })
 
     const getVideoSrc = (index) => `/videos/hero-${index}.mp4`;
-
+  
   return (
     <div className="relative h-dvh w-screen overflow-x-hidden">
       {isLoading && (
-        <div className="flex-center absolute z-[100] h-dvh w-screen overflow-hidden bg-violet-50 ">
-          <div className="three-body">
-            <div className="three-body__dot"></div>
-            <div className="three-body__dot"></div>
-            <div className="three-body__dot"></div>
-          </div>
+        <div className="flex-center absolute z-[100] h-dvh w-screen overflow-hidden bg-black ">
+          <div class="loader"></div>
         </div>
       )}
       <div

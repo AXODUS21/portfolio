@@ -43,7 +43,12 @@ const About = () => {
           <img
             src="img/stack.png"
             alt="background"
-            className="absolute left-0 top-0 size-full object-cover"
+            className="absolute left-0 top-0 size-full object-cover md:block hidden"
+          />
+          <img
+            src="img/stack2.png"
+            alt="background"
+            className="absolute left-0 top-0 size-full object-cover md:hidden block"
           />
         </div>
       </div>

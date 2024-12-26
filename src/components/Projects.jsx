@@ -44,7 +44,7 @@ const BentoCard = ({src, title}) => {
           playsInline
           className="absolute left-0 top-0 size-full object-center rounded-3xl"
         />
-        <div className="relative z-10 flex size-full flex-col justify-between p-5 text-yellow-300">
+        <div className="relative z-10 flex size-full flex-col justify-between p-5 text-yellow-300 ">
           <div>
             <h1 className="bento-title special-font">{title}</h1>
           </div>

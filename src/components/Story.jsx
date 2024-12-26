@@ -61,7 +61,7 @@ const Story = () => {
               <img
                 src="/img/entrance.png"
                 alt="entrance"
-                className="object-fill md:block hidden"
+                className="object-fill lg:block hidden"
                 ref={frameRef}
                 onMouseLeave={handleMouseLeave}
                 onMouseUp={handleMouseLeave}
@@ -71,17 +71,11 @@ const Story = () => {
             </div>
           </div>
 
-          <div className="px-5">
-              {/*mobile image*/}
+          <div className="pl-8 pr-10 mt-5">
               <img
                 src="/img/Mentrance.png"
                 alt="entrance"
-                className="object-fill md:hidden block"
-                ref={MframeRef}
-                onMouseLeave={handleMouseLeave}
-                onMouseUp={handleMouseLeave}
-                onMouseEnter={handleMouseLeave}
-                onMouseMove={handleMouseMove}
+                className="object-fill lg:hidden block"
               />
           </div>
 

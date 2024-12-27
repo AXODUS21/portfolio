@@ -10,16 +10,27 @@ import Footer from './components/Footer'
 
 const App = () => {
   return (
-    <main className='relative min-h-screen w-screen overflow-x-hidden'>
-      <Navbar/>
-      <Hero/>
-      <About/>
-      <Projects/>
-      <Story/>
-      <Contact/>
-      <Footer/>
+    <main className="relative min-h-screen w-screen overflow-x-hidden">
+      <Navbar />
+      <section id="home">
+        <Hero />
+      </section>
+      <section id="about">
+        <About />
+      </section>
+      <section id="projects">
+        <Projects />
+      </section>
+      <section id="testimonials">
+        <Story />
+      </section>
+      <section id="contact">
+        <Contact />
+      </section>
+      <Footer />
     </main>
-  )
-}
+  );
+};
+
 
 export default App

@@ -1,9 +1,8 @@
-import React, { useEffect, useRef, useState } from 'react'
-import { useWindowScroll } from 'react-use'
-import { Link } from "react-scroll";
-import gsap from 'gsap'
+import React, { useEffect, useRef, useState } from "react";
+import { useWindowScroll } from "react-use";
+import gsap from "gsap";
 
-const Navbar = () => {
+const Navbar = ({ sectionRefs }) => {
   const navContainerRef = useRef(null);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isNavVisible, setIsNavVisible] = useState(true);
@@ -15,6 +14,13 @@ const Navbar = () => {
   const toggleAudioIndicator = () => {
     setIsAudioPlaying((prev) => !prev);
     setIsIndicatorActive((prev) => !prev);
+  };
+
+  const handleScrollToSection = (section) => {
+    sectionRefs[section]?.current.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
   };
 
   const { y: currentScrollY } = useWindowScroll();
@@ -65,15 +71,13 @@ const Navbar = () => {
           <div className="flex h-full items-center">
             <div className="hidden md:block">
               {navItems.map((item) => (
-                <Link
+                <button
                   key={item}
-                  to={item.toLowerCase()}
-                  smooth={true}
-                  duration={500}
-                  className="nav-hover-btn cursor-pointer"
+                  onClick={() => handleScrollToSection(item.toLowerCase())}
+                  className="nav-hover-btn"
                 >
                   {item}
-                </Link>
+                </button>
               ))}
             </div>
 
@@ -104,4 +108,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar
+export default Navbar;

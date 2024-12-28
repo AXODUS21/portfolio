@@ -23,7 +23,6 @@ const usePreventScroll = (isLoading) => {
 const Hero = () => {
   const [currrentIndex, setCurrentIndex] = useState(1);
   const [hasClicked, setHasClicked] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [loadedVideos, setLoadedVideos] = useState(0);
   const totalVideos = 3;
@@ -103,11 +102,6 @@ const Hero = () => {
       return () => clearTimeout(timer);
   }, [isLoading]);
 
-  useEffect(() => {
-    if (isHovered) {
-      setHasClicked(false);
-    }
-  }, [isHovered]);
 
   return (
     <div className="relative h-dvh w-screen overflow-x-hidden">
@@ -128,8 +122,6 @@ const Hero = () => {
                 hasClicked ? "opacity-0 scale-50" : "opacity-100 scale-100"
               } hover:scale-100 hover:opacity-100`}
               onClick={handleMiniVdClick}
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
             >
               <video
                 ref={nextVideoRef}

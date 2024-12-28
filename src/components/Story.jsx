@@ -61,7 +61,7 @@ const Story = () => {
               <img
                 src="/img/entrance.png"
                 alt="entrance"
-                className="object-fill lg:block hidden"
+                className="object-fill xl:block hidden"
                 ref={frameRef}
                 onMouseLeave={handleMouseLeave}
                 onMouseUp={handleMouseLeave}
@@ -75,7 +75,7 @@ const Story = () => {
               <img
                 src="/img/Mentrance.png"
                 alt="entrance"
-                className="object-fill lg:hidden block"
+                className="object-fill xl:hidden block"
               />
           </div>
 

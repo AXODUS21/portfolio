@@ -124,6 +124,7 @@ const Hero = () => {
               onClick={handleMiniVdClick}
             >
               <video
+                preload="metadata"
                 ref={nextVideoRef}
                 src={getVideoSrc(upcomingVideoIndex)}
                 muted
@@ -136,6 +137,7 @@ const Hero = () => {
 
           <video
             ref={nextVideoRef}
+            preload="metadata"
             src={getVideoSrc(currrentIndex)}
             loop
             muted
@@ -149,6 +151,7 @@ const Hero = () => {
             src={getVideoSrc(
               currrentIndex === totalVideos - 1 ? 1 : currrentIndex
             )}
+            preload="metadata"
             playsInline
             autoPlay
             loop

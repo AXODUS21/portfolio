@@ -37,7 +37,7 @@ const BentoCard = ({src, title}) => {
     return (
       <div className="relative size-full ">
         <video
-          ref={nextVideoRef}
+          preload="metadata"
           src={src}
           loop
           muted

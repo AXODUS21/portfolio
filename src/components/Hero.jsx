@@ -175,7 +175,7 @@ const Hero = () => {
               <br />
               Lubi
             </p>
-            <a href="mailto:lubi.axellerosh@gmail.com">
+            <a href="https://calendly.com/lubi-axellerosh/30min" target="_blank">
               <Button
                 id="watch-trailer"
                 title="Drop a message"

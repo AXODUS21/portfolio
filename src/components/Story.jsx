@@ -1,85 +1,58 @@
 import React, { useRef } from 'react'
 import AnimatedTitle from './AnimatedTitle'
 import gsap from 'gsap'
-import RoundedCorners from './RoundedCorners'
+import AG from "/img/client3.png"
+import client1 from "/img/client1.png"
+import client2 from "/img/client2.jpg"
+
 const Story = () => {
-    const frameRef = useRef(null);
-    const MframeRef = useRef(null);
-    const handleMouseLeave = () => {
-        const element = frameRef.current;
 
-        gsap.to(element, {
-          rotateY: 0,
-          rotateX: 0,
-          duration: 0.3,
-          ease: "power1.inOut",
-        });
-    }
-
-    const handleMouseMove = (e) => {
-        const {clientX, clientY} = e;
-        const element = frameRef.current;
-      
-        if(!element) return;
-
-        const rect = element.getBoundingClientRect();
-        const x = clientX - rect.left;
-        const y = clientY - rect.top;
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-
-        const rotateY = ((y - centerY) / centerY) * 10;
-        const rotateX = ((x - centerX) / centerX) * -   10;
-
-        gsap.to(element, {
-            rotateY,
-            rotateX,
-            transformPerspective: 500,
-            duration: 0.3,
-            ease: "power1.inOut"
-        })
-    }
+ const testimonials = [
+  {
+    img: AG,
+    name: 'AG Dental Clinic',
+    testimony: "AG Dental Clinic had clear requirements and a strict deadline, which he handled with remarkable efficiency. He took the time to understand our vision and transformed it into a beautiful website that truly reflects our practice. The design is sleek, contemporary, and fully responsive, ensuring accessibility for all our patients.",
+  },
+  {
+    img: client1,
+    name: 'Jowel Stephen M. Cuevas',
+    testimony: "He worked hard to accomplish the task at hand very easy to communicate with and he even accommodated when I keep asking for changes within the website",
+  },
+  {
+    img: client2,
+    name: 'Christian Dimac',
+    testimony: "Our project had specific requirements and a tight deadline, and He managed everything with great efficiency. He took the time to understand our vision and translated it into a stunning website that perfectly represents our brand. The design is modern and responsive."
+,
+  },
+]
 
   return (
-    <div id="testimonials" className="min-h-dvh w-screen bg-black text-blue-50">
+    <div
+      id="testimonials"
+      className="min-h-dvh w-screen bg-black text-blue-50 "
+    >
       <div className="flex size-full flex-col items-center py-10 pb-24">
-        <p className="font-general text-sm uppercase">
-          Testimonials
-        </p>
+        <p className="font-general text-sm uppercase">Testimonials</p>
         <AnimatedTitle
           title="What Th<b>e</b>y say about<br/> my w<b>o</b>rk"
           sectionId="#testimonials"
           containerClass={
-            "mt-5 pointer-events-none mix-blend-difference relative z-10"
+            "mt-5 pointer-events-none mix-blend-difference relative z-10 mb-20"
           }
         />
 
-        <div className="story-img-container">
-          <div className="story-img-mask">
-            <div className="story-img-content">
-              {/*pc image*/}
-              <img
-                src="/img/entrance.png"
-                alt="entrance"
-                className="object-fill xl:block hidden"
-                ref={frameRef}
-                onMouseLeave={handleMouseLeave}
-                onMouseUp={handleMouseLeave}
-                onMouseEnter={handleMouseLeave}
-                onMouseMove={handleMouseMove}
-              />
+        <div className="grid lg:grid-cols-3 w-full place-items-center sm:grid-cols-1">
+          {testimonials.map((item) => (
+            <div className="bg-blue-50 text-black relative w-[400px] h-[400px] rounded-md border-2 border-slate-900">
+              <img src={item.img} className='rounded-full absolute -top-10 right-40 w-20 border-2 border-slate-900'/>
+              <div className="pt-16 text-center mb-10 font-general font-bold">
+                {item.name}
+              </div>
+              <div className="text-center px-7 font-circular-web">
+                {item.testimony}
+              </div>
             </div>
-          </div>
-
-          <div className="pl-8 pr-10 mt-5">
-              <img
-                src="/img/Mentrance.png"
-                alt="entrance"
-                className="object-fill xl:hidden block"
-              />
-          </div>
-
-          <RoundedCorners />
+          ))}
         </div>
       </div>
     </div>
